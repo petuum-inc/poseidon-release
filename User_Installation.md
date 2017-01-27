@@ -6,6 +6,7 @@
   - AWS OSX EI Caption
   - AWS OSX Sierra
 
+
 ## Requirements
 - Install python-pip, python-numpy
 ```
@@ -55,6 +56,7 @@ export LD_LIBRARY_PATH="/usr/local/cuda/lib64"
 ```
 You may also put these commands into `~/.bashrc` if you'd like to.
 
+
 ## Pip installation
 ```
 # Linux/gpu
@@ -85,10 +87,11 @@ Hello, Poseidon!
 >>>
 ```
 
+
 ## Cluster Installation
 To deploy Poseidon in a cluster environment, please follow the steps above for each cluster node. You can also use package tools under your system to do cluster deployment such as portage(Gentoo), deb(Ubuntu, Debian), rpm(CentOS, Redhat). We will support these kinds of package tools soon.
 
-For AWS users, we provide the AMIs for Ubuntu14.04 and Ubuntu16.04, you can just lauch instances directly using these AMIs.
+For AWS users, we provide the AMIs for Ubuntu14.04(search for "poseidon-ubuntu14" under "Community AMIs") and Ubuntu16.04(search for "poseidon-ubuntu16" under "Community AMIs"), you can just lauch your instances directly using these AMIs.
 
 
 ## Known Issues
