@@ -5,6 +5,7 @@ Next, we are going to help you run a sample CNN model. You can get the codes fro
 ## Data Preparation
 
 - Download
+
 The dataset will be downloaded automatically when you run the training code.
 
 - Partition
