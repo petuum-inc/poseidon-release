@@ -33,7 +33,7 @@ Options:
   -o OUTPUT_FOLDER, --out=OUTPUT_FOLDER
                        output log folder
 ```
-For example, you need to write a json format file "aws_cluster.json" including "worker_nodes" and "server_nodes" attributes. For current release, the number of worker nodes must be the same with the number of server_nodes. After that, you can start a CIFAR-10 task like this: `$POSEIDON_HOME/psd_run -c aws_cluster.json "python /home/ubuntu/tutorial/cifar10_train.py --max_steps 100"`. You can download the training script `cifar10_train.py` from [here](https://raw.githubusercontent.com/petuum-inc/poseidon-release/master/models/cifar10/cifar10_train.py). Make sure giving the absolute path here.
+For example, you need to write a json format file "aws_cluster.json" including "worker_nodes" and "server_nodes" attributes. For current release, the number of worker nodes must be the same with the number of server_nodes. After that, you can start a CIFAR-10 task like this: `$POSEIDON_HOME/psd_run -c aws_cluster.json "python /home/aws/tutorial/cifar10_train.py --max_steps 100"`. You can download the training script `cifar10_train.py` from [here](https://raw.githubusercontent.com/petuum-inc/poseidon-release/master/models/cifar10/cifar10_train.py). Make sure giving the absolute path here.
 
 ## Output
 After running Poseidon, you can check the execution log `poseidon_run.log` in the same path you run Poseidon. There are also addtional log files for debugging and monitoring purpose created in `poseidon_log_$TIMESTAMP_SUFFIX` folder.
