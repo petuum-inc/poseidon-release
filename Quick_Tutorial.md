@@ -1,31 +1,42 @@
-Please refer to this [tutorial](https://www.tensorflow.org/tutorials/deep_cnn/) for some information about Convolutional Neural Networks(CNNs) with TensorFlow and the CIFAR-10 dataset.
+# CIFAR-10 Setup Guide
+CIFAR-10 is a common benchmark in machine learning for image recognition.
 
-Next, we are going to help you run a sample CNN model. You can get the codes from [here]. After that, we will show you how to customize your own model.
+http://www.cs.toronto.edu/~kriz/cifar.html
+
+Code in this directory demonstrates how to use Poseidon to train and evaluate a convolutional neural network (CNN) on both CPU and GPU. We also demonstrate how to train a CNN over multiple GPUs.
+
+Detailed instructions on how to get started available at:
+
+http://tensorflow.org/tutorials/deep_cnn/
+
+Next, we are going to show you how to deploy this sample model on a cluster.
 
 ## Data Preparation
 
-- Download
-
+### Download
 The dataset will be downloaded automatically when you run the training code.
 
-- Partition
+### Partition
 
 ## Training
 Suppose you are deploying Poseidon on a cluster with *n* nodes, the IP address of the i'th node is *ip[i]*.
 
-First, start a **ps_master** on any node. Here we start the **ps_master** on the first node. Run the following command on node_0.
+First, you need to start a **ps_master** on one node. You may launch it on any node you like. Here we choose the first node. Run the following command on node_0.
 
 ```
 ps_master tcp://ip[0]:5555 n &
 ```
+A **ps_master** starts on node_0 and listens to port 5555. The second argument is the expected number of **ps_server**s and **worker**s, which equals to the number of nodes in the cluster.
 
-Then, start a **ps_server** by running the following command on ***EACH*** node.
+Then, start a **ps_server** on ***EACH*** node. Run the following command on node_i.
 
 ```
 ps_server tcp://ip[i]:6666 tcp://ip[0]:5555 &
 ```
+The first argument is the port number assigned to the i'th **ps_server**. The second one is the IP address of the **ps_master**.
 
-At last, start a worker process on ***EACH*** node.
+
+At last, start a **worker** process on ***EACH*** node by running the following command on node_i for each i.
 
 ```
 python cifar10_train.py --distributed=True --master_address=tcp://ip[0]:5555 --client_id=i
@@ -40,7 +51,7 @@ Poseidon's evaluating procedure is the same as TensorFlow's.
 
 https://www.tensorflow.org/tutorials/deep_cnn/#evaluating_a_model
 
-## Customizing Your Own Model
+## Configuration For Distributed Training
 Since Poseidon shares programming interfaces with TensorFlow, you can build up your model in the same way you use TensorFlow. Here is TensorFlow's [api_docs](https://www.tensorflow.org/api_docs/).
 
 The only difference is that we need to provide the cluster configuration to Poseidon when we create a **tf.Session**. Here is an example:
@@ -75,3 +86,8 @@ Here are some other arguments which are related to communication settings. You m
 |num_push_threads|number of threads which pushes parameters from workers to servers, default value is 4|
 |num_pull_threads|number of threads which pulls parameters from servers to workers, default value is 8|
 |block_size|tensors will be cut into key-value pairs with the size of block_size|
+
+## Training By Using Multiple GPU Cards
+***Currently, SFB is NOT supported for multi-gpu training.***
+
+To run multi-gpu training with Poseidon's parameter server, you only need to do the things described above. No more arguments or configuration are needed.
