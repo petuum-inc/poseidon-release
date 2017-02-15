@@ -7,7 +7,7 @@ Poseidon is a highly scalable and efficient system architecture for large-scale 
 [Install Poseidon]
 (http://poseidon-release.readthedocs.io/en/latest/User_Installation/)
 
-[Start your first distributed training instance]
+[Start your first distributed training instance using Poseidon]
 (http://poseidon-release.readthedocs.io/en/latest/Quick_Tutorial/)
 
 ## Introduction
@@ -39,7 +39,7 @@ The following figure shows Poseidon's performance on scaling up four widely adop
 | _ResNet-152_ | 60.2M | ILSVRC12 | 32 |
 
 
-For distributed execution, Poseidon consistently delivers near-linear increases in throughput across various models and engines: e.g. 31.5x speedup on training the Inception-V3 network using TensorFlow engine on 32 nodes, which improves 50\% upon the original TensorFlow (20x); When training a 229M parameter network (VGG19-22K), Poseidon still achieves near-linear speedup (30x on 32 nodes) using TensorFlow engine, while distributed TensorFlow sometimes experiences negative scaling with additional machines. 
+For distributed execution, Poseidon consistently delivers near-linear increases in throughput across various models and engines: e.g. 31.5x speedup on training the Inception-V3 network using TensorFlow engine on 32 nodes, which improves 50% upon the original TensorFlow (20x); When training a 229M parameter network (VGG19-22K), Poseidon still achieves near-linear speedup (30x on 32 nodes) using TensorFlow engine, while distributed TensorFlow sometimes experiences negative scaling with additional machines. 
 
 ## Older version of Poseidon
 
