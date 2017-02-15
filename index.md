@@ -16,9 +16,9 @@ Poseidon is an efficient communication interface for data-parallel DL on distrib
 
 Poseidon is orthogonal to TensorFlow, Caffe -- the techniques present in Poseidon could be used to produce a better distributed version of any existing DL frameworks. This release includes Poseidon-enabled Tensorflow, a better, more efficient and more scalable distributed deep learning system that has TensorFlow as the computing engine.
 
-# Performance at a Glance
+## Performance at a Glance
 
-## Throughput Scalability
+### Throughput Scalability
 
 Poseidon-enabled TensorFlow scale almost-linearly in algorithm throughput with additional machines, while incurring little additional overhead even in the single machine setting. 
 
