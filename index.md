@@ -24,15 +24,14 @@ Poseidon-enabled TensorFlow scale almost-linearly in algorithm throughput with a
 
 The following figure shows Poseidon's performance on scaling up four widely adopted neural networks (see the table for their configurations) using distributed GPU clusters. 
 
-<img src="https://c1.staticflickr.com/3/2098/32542114440_aa3c22b78e_b.jpg" height="300"> 
-<img src="https://c1.staticflickr.com/3/2344/32079474554_9f2fd0ff3b_b.jpg" height="300"> 
+<img src="https://c1.staticflickr.com/3/2632/32079844734_79b632baa7_n.jpg" height="300"> 
+<img src="https://c1.staticflickr.com/3/2344/32079474554_9f2fd0ff3b_n.jpg" height="300"> 
 
-<img src="https://c1.staticflickr.com/3/2106/32079474524_2f9df5b1a9_b.jpg" height="300">
-<img src="https://c1.staticflickr.com/4/3900/32769057602_dcc944d4a5_b.jpg" height="300">
-
+<img src="https://c1.staticflickr.com/3/2106/32079474524_2f9df5b1a9_n.jpg" height="300">
+<img src="https://c1.staticflickr.com/4/3900/32769057602_dcc944d4a5_n.jpg" height="300">
 
 | Name| # parameters| Dataset | Batchsize (single node) |
-| :---:|:---:|:---:|:---:| :---:|
+| :---:|:---:|:---:|:---:|
 | _Inception-V3_  | 27M | ILSVRC12  | 32 |
 | _VGG19_ | 143M | ILSVRC12 | 32 |
 | _VGG19-22K_ | 229M | ILSVRC12  | 32 | 
