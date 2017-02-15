@@ -2,7 +2,7 @@
 
 Poseidon is a highly scalable and efficient system architecture for large-scale deep learning on GPU clusters. This is the document website for Poseidon release.
 
-## Quick Start:
+## Quick Start
 
 [Install Poseidon](http://poseidon-release.readthedocs.io/en/latest/User_Installation/)
 
