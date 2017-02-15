@@ -10,7 +10,7 @@ Poseidon is a highly scalable and efficient system architecture for large-scale 
 [Start your first distributed training instance]
 (http://poseidon-release.readthedocs.io/en/latest/Quick_Tutorial/)
 
-## ddd
+## Introduction
 
 Poseidon is an efficient communication interface for data-parallel DL on distributed GPUs. Poseidon exploits the sequential layer-by-layer structure in DL programs, finding independent GPU computation operations and network communication operations in the training algorithm, so that they can be scheduled together to reduce bursty network communication. Moreover, Poseidon implements a hybrid communication scheme that accounts for each DL program layer's mathematical properties as well as the cluster configuration, in order to compute the network cost of different communication methods, and select the cheapest one -- currently, Poseidon implements and supports a [parameter server scheme] (http://www.pdl.cmu.edu/PDL-FTP/BigLearning/CMU-PDL-15-105.pdf) that is well-suited to small matrices, and a [sufficient factor broadcasting scheme] (http://www.cs.cmu.edu/~pengtaox/papers/uai16_sfb.pdf) that performs well on large matrices.
 
@@ -22,9 +22,13 @@ Poseidon is orthogonal to TensorFlow, Caffe -- the techniques present in Poseido
 
 Poseidon-enabled TensorFlow scale almost-linearly in algorithm throughput with additional machines, while incurring little additional overhead even in the single machine setting. 
 
-The following figure shows Poseidon's performance on scaling up four widely adopted neural networks (see the table for their configurations) using distributed GPU clusters. Inception-V3, VGG19, VGG19-22K and ResNet-152.
+The following figure shows Poseidon's performance on scaling up four widely adopted neural networks (see the table for their configurations) using distributed GPU clusters. 
 
-| Name| # parameters| Dataset | Batchsize (single node) | Test accuracy|
+<img src="https://c1.staticflickr.com/3/2098/32542114440_aa3c22b78e_b.jpg" height="300"> 
+
+
+
+| Name| # parameters| Dataset | Batchsize (single node) |
 | :---:|:---:|:---:|:---:| :---:|
 | _Inception-V3_  | 27M | ILSVRC12  | 32 |
 | _VGG19_ | 143M | ILSVRC12 | 32 |
