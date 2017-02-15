@@ -11,17 +11,26 @@ Poseidon is a highly scalable and efficient system architecture for large-scale 
 (http://poseidon-release.readthedocs.io/en/latest/Quick_Tutorial/)
 
 ## Introduction
+
 Poseidon is an efficient communication interface for data-parallel DL on distributed GPUs. Poseidon exploits the sequential layer-by-layer structure in DL programs, finding independent GPU computation operations and network communication operations in the training algorithm, so that they can be scheduled together to reduce bursty network communication. Moreover, Poseidon implements a hybrid communication scheme that accounts for each DL program layer's mathematical properties as well as the cluster configuration, in order to compute the network cost of different communication methods, and select the cheapest one -- currently, Poseidon implements and supports a [parameter server scheme] (http://www.pdl.cmu.edu/PDL-FTP/BigLearning/CMU-PDL-15-105.pdf) that is well-suited to small matrices, and a [sufficient factor broadcasting scheme] (http://www.cs.cmu.edu/~pengtaox/papers/uai16_sfb.pdf) that performs well on large matrices.
 
  Poseidon is orthogonal to TensorFlow, Caffe -- the techniques present in Poseidon could be used to produce a better distributed version of any existing DL frameworks. This release includes Poseidon-enabled Tensorflow, a better, more efficient and more scalable distributed deep learning system that has TensorFlow as its computing engine.
 
 ## Performance at a Glance
 
+Poseidon-enabled TensorFlow scale almost-linearly in algorithm throughput with additional machines, while incurring little additional overhead even in the single machine setting. 
+
+The following figure shows Poseidon's performance 
+
+For distributed execution, with 40GbE network bandwidth available, Poseidon consistently delivers near-linear increases in throughput across various models and engines: e.g. 31.5x speedup on training the Inception-V3 network using TensorFlow engine on 32 nodes, which improves 50\% upon the original TensorFlow (20x); When training a 229M parameter network (VGG19-22K), Poseidon still achieves near-linear speedup (30x on 32 nodes) using both Caffe and TensorFlow engines, while distributed TensorFlow sometimes experiences negative scaling with additional machines. Our experiments also confirm that Poseidon successfully alleviates network communication bottlenecks, by reducing the required bandwidth for parallelizing large models. For example, when training VGG19-22K under limited bandwidth (10GbE), in contrast to a parameter server based paralleization which only achieves 4x speedup with 16 machines, Poseidon effectively reduces the communication overheads by automatically specializing the best communication method for each layer, and is able to keep linear scaling on throughput.
+
+Compared to other communication reduction methods~\cite{Chilimbi:2014:OSDI,yu2014introduction}, Poseidon demonstrates either systems advantages (increased algorithm throughput) or statistical advantages (fewer algorithm steps or iterations to reach a fixed termination criteria). Poseidon does not suffer much from imbalanced communication loads, which we found to be the case when using the sufficient factor strategy used in Project Adam~\cite{Chilimbi:2014:OSDI}. Poseidon also guarantees that the number of algorithm steps to reach termination remains unchanged, unlike the 1-bit quantization strategy used in CNTK~\cite{yu2014introduction} which is approximate and can hurt statistical performance in some applications. 
+
 
 
 ## Older version of Poseidon
 
-You can find the Poseidon-enabled Caffe in [this repository] (https://github.com/sailing-pmls/poseidon/wiki)
+You can find the Poseidon-enabled Caffe in [this repository] (https://github.com/sailing-pmls/poseidon/wiki).
 
 ## Reference
       
