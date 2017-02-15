@@ -25,7 +25,6 @@ Poseidon-enabled TensorFlow scale almost-linearly in algorithm throughput with a
 The following figure shows Poseidon's performance on scaling up four widely adopted neural networks (see the table for their configurations) using distributed GPU clusters. 
 
 <img src="https://c1.staticflickr.com/3/2098/32542114440_aa3c22b78e_b.jpg" height="300"> 
-
 <img src="https://c1.staticflickr.com/3/2344/32079474554_9f2fd0ff3b_b.jpg" height="300"> 
 
 <img src="https://c1.staticflickr.com/3/2106/32079474524_2f9df5b1a9_n.jpg" height="300">
