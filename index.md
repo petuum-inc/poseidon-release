@@ -38,7 +38,7 @@ The following figure shows Poseidon's performance on scaling up four widely adop
 
 For distributed execution, Poseidon consistently delivers near-linear increases in throughput across various models and engines: e.g. 31.5x speedup on training the Inception-V3 network using TensorFlow engine on 32 nodes, which improves 50% upon the original TensorFlow (20x); When training a 229M parameter network (VGG19-22K), Poseidon still achieves near-linear speedup (30x on 32 nodes) using TensorFlow engine, while distributed TensorFlow sometimes experiences negative scaling with additional machines. 
 
-# Older version of Poseidon
+# Poseidon Caffe
 
 You can find the Poseidon-enabled Caffe in [this repository](https://github.com/sailing-pmls/poseidon/wiki).
 
