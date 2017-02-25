@@ -1,4 +1,4 @@
-This is a quick tutorial to run a distributed poseidon task on both CPU and GPU. In this tutorial, we will use [CIFAR-10](http://www.cs.toronto.edu/~kriz/cifar.html), which is a common benchmark in machine learning for image recognition using convolutional neural network(CNN). More detailed instructions on how to get started available at: [http://tensorflow.org/tutorials/deep_cnn/](http://tensorflow.org/tutorials/deep_cnn/).
+This is a quick tutorial to run a distributed poseidon task on both CPU and GPU. In this tutorial, we will use [CIFAR-10](http://www.cs.toronto.edu/~kriz/cifar.html), which is a common benchmark in machine learning for image recognition using convolutional neural network(CNN). More detailed instructions on how to get started available at: [https://www.tensorflow.org/versions/r0.10/tutorials/deep_cnn/](https://www.tensorflow.org/versions/r0.10/tutorials/deep_cnn/).
 
 ## Data Downloading
 The dataset will be downloaded automatically when you run the training code.
@@ -39,10 +39,10 @@ For example, you need to write a json format file "aws_cluster.json" including "
 After running Poseidon, you can check the execution log `poseidon_run.log` in the same path you run Poseidon. There are also addtional log files for debugging and monitoring purpose created in `poseidon_log_$TIMESTAMP_SUFFIX` folder.
 
 ## Evaluating
-Poseidon's evaluating procedure is the same as TensorFlow's. Please follow the tutorial [here](https://www.tensorflow.org/tutorials/deep_cnn/#evaluating_a_model).
+Poseidon's evaluating procedure is the same as TensorFlow's. Please follow the tutorial [here](://www.tensorflow.org/versions/r0.10/tutorials/deep_cnn/#evaluating_a_model).
 
 ## Configuration For Distributed Training
-Since Poseidon shares programming interfaces with TensorFlow, you can build up your model in the same way you use TensorFlow. Here is TensorFlow's [api_docs](https://www.tensorflow.org/api_docs/). The only difference is that you need to provide the cluster configuration to Poseidon when we create a **tf.Session**. Here is an example:
+Since Poseidon shares programming interfaces with TensorFlow, you can build up your model in the same way you use TensorFlow. Here is TensorFlow's [api_docs](https://www.tensorflow.org/versions/r0.10/api_docs/python/). The only difference is that you need to provide the cluster configuration to Poseidon when we create a **tf.Session**. Here is an example:
 
 ```
 config = tf.ConfigProto(log_device_placement = FLAGS.log_device_placement)
