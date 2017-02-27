@@ -60,7 +60,7 @@ sudo pip install --upgrade protobuf==3.1.0 setuptools==30.1.0
 - Install Poseidon
 ```
 # Linux/gpu
-export PSD_BINARY_URL=https://github.com/petuum/storage/blob/master/poseidon/wheel/linux/gpu/poseidon-0.10.0-cp27-none-linux_x86_64.whl?raw=true
+export PSD_BINARY_URL=https://github.com/sailing-pmls/storage/blob/master/poseidon/wheel/linux/gpu/poseidon-0.10.0-cp27-none-linux_x86_64.whl?raw=true
 
 # OSX/cpu
 export PSD_BINARY_URL=https://github.com/petuum/storage/blob/master/poseidon/wheel/mac/cpu/poseidon-0.10.0-py2-none-any.whl?raw=true
