@@ -7,39 +7,9 @@
   - AWS OSX Sierra
 
 
-## Requirements
-- Install python-pip, python-numpy
-```
-# Redhat/CentOS 7.x 64-bit
-sudo yum install wget
-sudo wget https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
-sudo rpm -ivh epel-release-latest-7.noarch.rpm
-sudo yum makecache
-sudo yum install swig python-pip numpy.x86_64 python-wheel
-sudo yum install git
+## CUDA and CUDNN Requirements
 
-# Ubuntu 14.04 64-bit
-sudo apt-get update
-sudo apt-get install python-pip python-numpy
-
-# Ubuntu 16.04 64-bit
-sudo apt-get update
-sudo apt install python-pip python-numpy
-
-# OSX
-brew install swig python homebrew/python/numpy
-sudo pip install wheel
-brew install git
-```
-
-- Install protobuf
-```
-sudo pip install --upgrade protobuf==3.1.0 setuptools==30.1.0
-```
-
-- Install CUDA and cuDNN
-
-Refer to this [link](https://developer.nvidia.com/cuda-downloads) to download and install CUDA. Please install version 8.0. For Ubuntu 14.04, please directly download the `.deb` file and do installation. For CentOS and redHat, please directly download the  .rpm file and do installation. For Macintosh, please directly download the .dmg file and do installation. The default installation will put the toolkit into `/usr/local/cuda-8.0` and will create a symbolic folder at `/usr/local/cuda`.
+Currently, Poseidon only supports GPU environment so you need to install cuda and cudnn library. Refer to this [link](https://developer.nvidia.com/cuda-downloads) to download and install CUDA. Please install version 8.0. For Ubuntu 14.04, please directly download the `.deb` file and do installation. For CentOS and redHat, please directly download the  .rpm file and do installation. For Macintosh, please directly download the .dmg file and do installation. The default installation will put the toolkit into `/usr/local/cuda-8.0` and will create a symbolic folder at `/usr/local/cuda`.
 
 Download cuDNN v5.1 from [here](https://developer.nvidia.com/cudnn). Uncompress and copy the cuDNN files into the toolkit directory. Assuming the toolkit is installed in /usr/local/cuda, run the following commands (edited to reflect the cuDNN version you downloaded):
 ```
@@ -56,8 +26,38 @@ export LD_LIBRARY_PATH="/usr/local/cuda/lib64"
 ```
 You may also put these commands into `~/.bashrc` if you'd like to.
 
+## Install using pip
+- Install python-pip, python-numpy
+```
 
-## Pip installation
+# Redhat/CentOS 7.x 64-bit
+sudo yum install wget
+sudo wget https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+sudo rpm -ivh epel-release-latest-7.noarch.rpm
+sudo yum makecache
+sudo yum install swig python-pip numpy.x86_64 python-wheel
+sudo yum install git
+
+# Ubuntu 14.04 64-bit
+sudo apt-get update
+sudo apt-get install python-pip python-numpy python-paramiko
+
+# Ubuntu 16.04 64-bit
+sudo apt-get update
+sudo apt install python-pip python-numpy python-paramiko
+
+# OSX
+brew install swig python homebrew/python/numpy
+sudo pip install wheel paramiko
+brew install git
+```
+
+- Install protobuf
+```
+sudo pip install --upgrade protobuf==3.1.0 setuptools==30.1.0
+```
+
+- Install Poseidon
 ```
 # Linux/gpu
 export PSD_BINARY_URL=https://github.com/petuum/storage/blob/master/poseidon/wheel/linux/gpu/poseidon-0.10.0-cp27-none-linux_x86_64.whl?raw=true
@@ -71,6 +71,20 @@ Install Poseidon:
 sudo pip install $PSD_BINARY_URL
 ```
 
+## Install using apt-get under ubuntu/debian
+```
+wget https://github.com/sailing-pmls/storage/raw/master/poseidon/deb/ubuntu14/poseidon-repo-ubuntu0.10_amd64.deb
+sudo dpkg -i poseidon-repo-ubuntu0.10_amd64.deb
+sudo apt-get update
+sudo apt-get install poseidon
+```
+
+## Cluster Installation
+To deploy Poseidon in a cluster environment, please follow the steps above for each cluster node. You can also use package tools under your system to do cluster deployment such as portage(Gentoo), deb(Ubuntu, Debian), rpm(CentOS, Redhat). We will support these kinds of package tools soon.
+
+For AWS users, we provide the AMIs for Ubuntu14.04(search for "poseidon-v0.10-aws-ubuntu14.04LTS" under "Community AMIs") and Ubuntu16.04(search for "poseidon-v0.10-aws-ubuntu16.04LTS" under "Community AMIs"), you can just lauch your instances directly using these AMIs.
+
+## Tiny Test
 You can now test your installation:
 ```
 $ python
@@ -86,13 +100,6 @@ Hello, Poseidon!
 42
 >>>
 ```
-
-
-## Cluster Installation
-To deploy Poseidon in a cluster environment, please follow the steps above for each cluster node. You can also use package tools under your system to do cluster deployment such as portage(Gentoo), deb(Ubuntu, Debian), rpm(CentOS, Redhat). We will support these kinds of package tools soon.
-
-For AWS users, we provide the AMIs for Ubuntu14.04(search for "poseidon-ubuntu14" under "Community AMIs") and Ubuntu16.04(search for "poseidon-ubuntu16" under "Community AMIs"), you can just lauch your instances directly using these AMIs.
-
 
 ## Known Issues
 
