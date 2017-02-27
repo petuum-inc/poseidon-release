@@ -7,7 +7,7 @@ The dataset will be downloaded automatically when you run the training code.
 
 First, make sure you have Poseidon successfully installed in your cluster. Follow the [User Installation](http://poseidon-release.readthedocs.io/en/latest/User_Installation/#cluster-installation) section for instruction.
 
-Now, suppose you have Poseidon installed at "/usr/local/lib/python2.7/dist-packages/tensorflow", we will call it `$POSEIDON_HOME` below.(Here we keep the namespace `tensorflow` to minimize the high-level modification effort.) The main entry to run Poseidon tasks is `$POSEIDON_HOME/psd_run`.
+Now, suppose you have Poseidon installed at `/usr/local/lib/python2.7/dist-packages/tensorflow`, we will call it `$POSEIDON_HOME` below.(Here we keep the namespace `tensorflow` to minimize the modification effort.) The main entry to run Poseidon tasks is `psd_run`.
 ```
 Usage: 
   psd_run options args
@@ -33,7 +33,7 @@ Options:
   -o OUTPUT_FOLDER, --out=OUTPUT_FOLDER
                        output log folder
 ```
-For example, you need to write a json format file "aws_cluster.json" including "worker_nodes" and "server_nodes" attributes. For current release, the number of worker nodes must be the same with the number of server_nodes. After that, you can start a CIFAR-10 task like this: `$POSEIDON_HOME/psd_run -c aws_cluster.json "python /home/aws/tutorial/cifar10_train.py --max_steps 100"`. You can download the training script `cifar10_train.py` from [here](https://raw.githubusercontent.com/petuum-inc/poseidon-release/master/models/cifar10/cifar10_train.py). Make sure giving the absolute path here.
+For example, you need to write a json format file `aws_cluster.json` including `worker_nodes` and `server_nodes` attributes. For current release, the number of worker nodes must be the same with the number of server_nodes. After that, you can start a CIFAR-10 task like this: `$POSEIDON_HOME/psd_run -c aws_cluster.json "python /home/aws/tutorial/cifar10_train.py --max_steps 100"`. You can download the training script `cifar10_train.py` from [here](https://raw.githubusercontent.com/petuum-inc/poseidon-release/master/models/cifar10/cifar10_train.py). Make sure giving the absolute path here.
 
 ## Poseidon Logs
 After running Poseidon, you can check the execution log `poseidon_run.log` in the same path you run Poseidon. There are also addtional log files for debugging and monitoring purpose created in `poseidon_log_$TIMESTAMP_SUFFIX` folder.
