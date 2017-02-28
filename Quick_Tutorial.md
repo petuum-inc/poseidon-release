@@ -1,7 +1,7 @@
 This is a quick tutorial to run a distributed poseidon task on both CPU and GPU. In this tutorial, we will use [CIFAR-10](http://www.cs.toronto.edu/~kriz/cifar.html), which is a common benchmark in machine learning for image recognition using convolutional neural network(CNN). More detailed instructions on how to get started available at: [https://www.tensorflow.org/versions/r0.10/tutorials/deep_cnn/](https://www.tensorflow.org/versions/r0.10/tutorials/deep_cnn/).
 
 ## Data Downloading
-The dataset will be downloaded automatically when you run the training code.
+The dataset will be downloaded automatically when you run the training code. In other words, the dataset is shared in the server across network. You can also put your dataset in a distributed file system or in the same system path.
 
 ## Training
 
