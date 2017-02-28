@@ -6,7 +6,7 @@ Poseidon is a highly scalable and efficient system architecture for large-scale 
 
 [Install Poseidon](http://poseidon-release.readthedocs.io/en/latest/User_Installation/)
 
-[Start your first distributed training instance using Poseidon](http://poseidon-release.readthedocs.io/en/latest/Quick_Tutorial/)
+[10 Minutes' Tutorial](http://poseidon-release.readthedocs.io/en/latest/Quick_Tutorial/)
 
 # Introduction
 
