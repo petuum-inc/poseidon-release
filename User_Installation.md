@@ -72,9 +72,11 @@ sudo pip install $PSD_BINARY_URL
 ```
 
 ## Install using apt-get under ubuntu/debian
+First, you need to install CUDA and CUDNN, please check out the install guide above.
+
 ```
-wget https://github.com/sailing-pmls/storage/raw/master/poseidon/deb/ubuntu14/poseidon-repo-ubuntu0.10_amd64.deb
-sudo dpkg -i poseidon-repo-ubuntu0.10_amd64.deb
+wget -O poseidon-repo-ubuntu_0.10_amd64.deb https://github.com/sailing-pmls/storage/raw/master/poseidon/deb/ubuntu/poseidon-repo-ubuntu_0.10_amd64.deb?raw=true
+sudo dpkg -i poseidon-repo-ubuntu_0.10_amd64.deb
 sudo apt-get update
 sudo apt-get install poseidon
 ```
