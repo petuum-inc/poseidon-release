@@ -71,14 +71,21 @@ Install Poseidon:
 sudo pip install $PSD_BINARY_URL
 ```
 
+Uninstall Posieon:
+```
+sudo pip uninstall poseidon
+```
+
 ## Install using apt-get under ubuntu/debian
 First, you need to install CUDA and CUDNN, please check out the install guide above.
 
 ```
-wget -O poseidon-repo-ubuntu_0.10_amd64.deb https://github.com/sailing-pmls/storage/raw/master/poseidon/deb/ubuntu/poseidon-repo-ubuntu_0.10_amd64.deb?raw=true
+wget -O poseidon-repo-ubuntu_0.10_amd64.deb https://github.com/sailing-pmls/storage/blob/master/poseidon/deb/ubuntu/poseidon-repo-0.10_amd64.deb?raw=true
 sudo dpkg -i poseidon-repo-ubuntu_0.10_amd64.deb
 sudo apt-get update
 sudo apt-get install poseidon
+# uninstall
+sudo apt-get uninstall poseidon
 ```
 
 ## Cluster Installation
