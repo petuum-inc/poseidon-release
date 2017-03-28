@@ -2,9 +2,9 @@
   - AWS Ubuntu Server 14.04
   - AWS Ubuntu Server 16.04
   - AWS CentOS 6.x(TODO)
-  - AWS CentOS 7.x
-  - AWS OSX EI Caption
-  - AWS OSX Sierra
+  - AWS CentOS 7.x(not up-to-date)
+  - AWS OSX EI Caption(not up-to-date)
+  - AWS OSX Sierra(not up-to-date)
 
 
 ## CUDA and CUDNN Requirements
