@@ -111,8 +111,6 @@ sudo apt-get uninstall poseidon
 ## Cluster Installation
 To deploy Poseidon in a cluster environment, please follow the steps above for each cluster node. You can also use package tools under your system to do cluster deployment such as portage(Gentoo), deb(Ubuntu, Debian), rpm(CentOS, Redhat). We will support these kinds of package tools soon.
 
-For AWS users, we provide the AMIs for Ubuntu14.04(search for `poseidon-v0.10-aws-ubuntu14.04LTS` under `Community AMIs`) and Ubuntu16.04(search for `poseidon-v0.10-aws-ubuntu16.04LTS` under `Community AMIs`), you can just lauch your instances directly using these AMIs.
-
 Note: If you installed poseidon using virtualenv, make sure to specify which python should run the scripts by launching python with the absolute path. For instance, if your username is ubuntu and you placed virtualenv in ~/poseidon:
 
 ```
