@@ -13,7 +13,7 @@ Usage:
   psd_run options args
 
 Example:
-  psd_run -c(--cluster_config) config.json "python conv.py --batch 10"
+  psd_run -c(--cluster_config) -o(--out) ~/logs config.json "python conv.py --batch 10"
 
 Options:
   -h, --help            show this help message and exit
@@ -21,6 +21,8 @@ Options:
                        configuration file for cluster environment: specify
                        workers in each machine.
                        See example:  {
+                       "pem_file": "cluster-key.pem",
+                       "username": "ubuntu",
                        "worker_nodes": [
                            "192.168.1.11",
                            "192.168.1.12",
