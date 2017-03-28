@@ -27,24 +27,21 @@ export LD_LIBRARY_PATH="/usr/local/cuda/lib64"
 You may also put these commands into `~/.bashrc` if you'd like to.
 
 ## Install using pip
-- Install python-pip, python-numpy
-```
 
+- Install python-pip (if you haven't already done so)
+
+```
 # Redhat/CentOS 7.x 64-bit
 sudo yum install wget
 sudo wget https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
 sudo rpm -ivh epel-release-latest-7.noarch.rpm
 sudo yum makecache
-sudo yum install swig python-pip numpy.x86_64 python-wheel
+sudo yum install swig python-pip python-wheel
 sudo yum install git
 
-# Ubuntu 14.04 64-bit
+# Ubuntu 14.04 and 16.04 64-bit
 sudo apt-get update
-sudo apt-get install python-pip python-numpy python-paramiko
-
-# Ubuntu 16.04 64-bit
-sudo apt-get update
-sudo apt install python-pip python-numpy python-paramiko
+sudo apt-get install python-pip
 
 # OSX
 brew install swig python homebrew/python/numpy
@@ -52,9 +49,34 @@ sudo pip install wheel paramiko
 brew install git
 ```
 
-- Install protobuf
+#### OPTIONAL: Set up virtualenv
+
+Use virtualenv if you wish to install poseidon and tensorflow to a clean python environment. 
+
+Note: if you already have tensorflow installed on the machine, this is highly recommended.
+
+- Install virtualenv to new directory (for instance, ~/poseidon)
 ```
-sudo pip install --upgrade protobuf==3.1.0 setuptools==30.1.0
+sudo pip install virtualenv
+mkdir ~/poseidon
+cd ~/poseidon
+virtualenv .
+. bin/activate
+
+# Uninstall
+deactivate
+sudo rm -r ~/poseidon
+```
+
+At this point, your terminal is set up to install into the new location.
+
+#### Install dependencies and poseidon
+Note: if you are not using virtualenv, you may need to `sudo` the following operations.
+
+- Install setuptools, protobuf, numpy
+```
+sudo apt-get install libssl-dev
+pip install --upgrade setuptools==30.1.0 protobuf==3.1.0 numpy paramiko
 ```
 
 - Install Poseidon
@@ -64,16 +86,14 @@ export PSD_BINARY_URL=https://github.com/sailing-pmls/storage/blob/master/poseid
 
 # OSX/cpu
 export PSD_BINARY_URL=https://github.com/petuum/storage/blob/master/poseidon/wheel/mac/cpu/poseidon-0.10.0-py2-none-any.whl?raw=true
-```
 
-Install Poseidon:
-```
-sudo pip install $PSD_BINARY_URL
+# Install
+pip install $PSD_BINARY_URL
 ```
 
 Uninstall Posieon:
 ```
-sudo pip uninstall poseidon
+pip uninstall poseidon
 ```
 
 ## Install using apt-get under ubuntu/debian
@@ -92,6 +112,12 @@ sudo apt-get uninstall poseidon
 To deploy Poseidon in a cluster environment, please follow the steps above for each cluster node. You can also use package tools under your system to do cluster deployment such as portage(Gentoo), deb(Ubuntu, Debian), rpm(CentOS, Redhat). We will support these kinds of package tools soon.
 
 For AWS users, we provide the AMIs for Ubuntu14.04(search for `poseidon-v0.10-aws-ubuntu14.04LTS` under `Community AMIs`) and Ubuntu16.04(search for `poseidon-v0.10-aws-ubuntu16.04LTS` under `Community AMIs`), you can just lauch your instances directly using these AMIs.
+
+Note: If you installed poseidon using virtualenv, make sure to specify which python should run the scripts by launching python with the absolute path. For instance, if your username is ubuntu and you placed virtualenv in ~/poseidon:
+
+```
+/home/ubuntu/poseidon/bin/python script.py --args
+```
 
 ## Tiny Test
 You can now test your installation:
