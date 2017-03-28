@@ -105,7 +105,7 @@ sudo dpkg -i poseidon-repo-ubuntu_0.10_amd64.deb
 sudo apt-get update
 sudo apt-get install poseidon
 # uninstall
-sudo apt-get uninstall poseidon
+sudo apt-get remove poseidon
 ```
 
 ## Cluster Installation
