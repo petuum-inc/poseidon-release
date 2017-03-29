@@ -35,7 +35,24 @@ Options:
   -o OUTPUT_FOLDER, --out=OUTPUT_FOLDER
                        output log folder
 ```
-For example, you need to write a json format file `aws_cluster.json` including `worker_nodes` and `server_nodes` attributes. For current release, the number of worker nodes must be the same with the number of server_nodes. After that, you can start a CIFAR-10 task like this: `psd_run -c aws_cluster.json "python /home/ubuntu/cifar10_train.py --max_steps 100"`. You can download the training script `cifar10_train.py` from [here](https://raw.githubusercontent.com/petuum-inc/poseidon-release/master/models/cifar10/cifar10_train.py). Make sure giving the absolute path here.
+#### Cluster Configuration
+Within the cluster configuration json there are two required fields and several optional ones.
+
+Required:
+
+* worker_nodes - required list of IP addresses to run the tensorflow script files.
+* server_nodes - required list of IP addresses for parameter servers.
+
+Note: The number of worker and server nodes currently must be equal.
+
+Optional:
+
+* master_node - IP of the master, by default this is set to be local machine
+* pem_file - If using aws, use this to point to the pem file required for ssh auth
+* virtualenv - If using python within a virtualenv, point to the virtualenv root directory (equivalent to echo $VIRTUALENV).
+* username - Set global username for all processes/communication. The username should be set for ssh no-password authentication on all machines. The default is `ubuntu`.
+
+For example, you need to write a json format file `aws_cluster.json` including `worker_nodes` and `server_nodes` attributes. After that, you can start a CIFAR-10 task like this: `psd_run -c aws_cluster.json "python /home/ubuntu/cifar10_train.py --max_steps 100"`. You can download the training script `cifar10_train.py` from [here](https://raw.githubusercontent.com/petuum-inc/poseidon-release/master/models/cifar10/cifar10_train.py). Make sure giving the absolute path here.
 
 ## Poseidon Logs
 After running Poseidon, you can check the execution log `poseidon_run.log` in the same path you run Poseidon. There are also addtional log files for debugging and monitoring purpose created in `poseidon_log_$TIMESTAMP_SUFFIX` folder.
