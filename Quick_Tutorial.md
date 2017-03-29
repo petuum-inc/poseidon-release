@@ -49,7 +49,7 @@ Optional:
 
 * master_node - IP of the master, by default this is set to be local machine
 * pem_file - If using aws, use this to point to the pem file required for ssh auth
-* virtualenv - If using python within a virtualenv, point to the virtualenv root directory (equivalent to echo $VIRTUALENV).
+* virtualenv - If using python within a virtualenv, point to the virtualenv root directory (equivalent to `echo $VIRTUAL_ENV`).
 * username - Set global username for all processes/communication. The username should be set for ssh no-password authentication on all machines. The default is `ubuntu`.
 
 For example, you need to write a json format file `aws_cluster.json` including `worker_nodes` and `server_nodes` attributes. After that, you can start a CIFAR-10 task like this: `psd_run -c aws_cluster.json "python /home/ubuntu/cifar10_train.py --max_steps 100"`. You can download the training script `cifar10_train.py` from [here](https://raw.githubusercontent.com/petuum-inc/poseidon-release/master/models/cifar10/cifar10_train.py). Make sure giving the absolute path here.
