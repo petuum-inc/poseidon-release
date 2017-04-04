@@ -44,7 +44,7 @@ sudo yum install python-pip libffi-devel python-devel openssl-devel
 
 # Ubuntu 14.04 and 16.04 64-bit
 sudo apt-get update
-sudo apt-get install python-pip
+sudo apt-get install python-pip libssl-dev
 
 # OSX
 brew install swig python homebrew/python/numpy
@@ -78,7 +78,6 @@ Note: if you are not using virtualenv, you may need to `sudo` the following oper
 
 - Install setuptools, protobuf, numpy
 ```
-sudo apt-get install libssl-dev
 pip install --upgrade setuptools==30.1.0 protobuf==3.1.0 numpy paramiko
 ```
 
@@ -147,6 +146,7 @@ sudo pip --proxy http://web-proxy.mydomain.com install somepackage
 ```
 
 - No installed Nvidia GPU driver
+
 Device driver installation instructions for CentOS 7
 
 ```
@@ -157,5 +157,5 @@ sudo yum install kmod-nvidia
 
 Finally, reboot.
 
-Try nvidia-smi again to verify the installation was successful.
+Try `nvidia-smi` again to verify the installation was successful.
 
