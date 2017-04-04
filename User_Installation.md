@@ -9,7 +9,11 @@
 
 ## CUDA and CUDNN Requirements
 
-Currently, Poseidon only supports GPU environment so you need to install cuda and cudnn library. Refer to this [link](https://developer.nvidia.com/cuda-downloads) to download and install CUDA. Please install version 8.0. For Ubuntu 14.04, please directly download the `.deb` file and do installation. For CentOS and redHat, please directly download the  .rpm file and do installation. For Macintosh, please directly download the .dmg file and do installation. The default installation will put the toolkit into `/usr/local/cuda-8.0` and will create a symbolic folder at `/usr/local/cuda`.
+Currently, Poseidon only supports GPU environments so you need to install cuda and cudnn library. 
+
+Determine if your GPU driver is correctly configured (for Nvidia GPU's) with `nvidia-smi` command. A box should show up with the installed GPUs and some stats such as temperature, etc. If this fails refer to the GPU driver instructions in the Known Issues page at the bottom of this tutorial.
+
+Refer to this [link](https://developer.nvidia.com/cuda-downloads) to download and install CUDA. Please install version 8.0. For Ubuntu 14.04, please directly download the `.deb` file and do installation. For CentOS and redHat, please directly download the  .rpm file and do installation. For Macintosh, please directly download the .dmg file and do installation. The default installation will put the toolkit into `/usr/local/cuda-8.0` and will create a symbolic folder at `/usr/local/cuda`.
 
 Download cuDNN v5.1 from [here](https://developer.nvidia.com/cudnn). Uncompress and copy the cuDNN files into the toolkit directory. Assuming the toolkit is installed in /usr/local/cuda, run the following commands (edited to reflect the cuDNN version you downloaded):
 ```
@@ -36,8 +40,7 @@ sudo yum install wget
 sudo wget https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
 sudo rpm -ivh epel-release-latest-7.noarch.rpm
 sudo yum makecache
-sudo yum install swig python-pip python-wheel
-sudo yum install git
+sudo yum install python-pip libffi-devel python-devel openssl-devel
 
 # Ubuntu 14.04 and 16.04 64-bit
 sudo apt-get update
@@ -138,7 +141,21 @@ Hello, Poseidon!
 
 - Pip no connection
 
-Please try to add a prxoy with the pip command:
+Please try to add a proxy with the pip command:
 ```
 sudo pip --proxy http://web-proxy.mydomain.com install somepackage
 ```
+
+- No installed Nvidia GPU driver
+Device driver installation instructions for CentOS 7
+
+```
+sudo rpm --import https://www.elrepo.org/RPM-GPG-KEY-elrepo.org
+sudo rpm -Uvh http://www.elrepo.org/elrepo-release-7.0-2.el7.elrepo.noarch.rpm
+sudo yum install kmod-nvidia
+```
+
+Finally, reboot.
+
+Try nvidia-smi again to verify the installation was successful.
+
