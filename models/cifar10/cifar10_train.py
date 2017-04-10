@@ -55,6 +55,7 @@ tf.app.flags.DEFINE_integer('max_steps', 1000000,
                             """Number of batches to run.""")
 tf.app.flags.DEFINE_boolean('log_device_placement', False,
                             """Whether to log device placement.""")
+tf.app.flags.DEFINE_boolean('distributed', False, "Mode.")
 tf.app.flags.DEFINE_string('master_address', "tcp://0.0.0.0:5555", "master address")
 #tf.app.flags.DEFINE_integer('client_id', -1, "client id")
 
@@ -89,18 +90,17 @@ def train():
 
     # Start running operations on the Graph.
     config = tf.ConfigProto(log_device_placement = FLAGS.log_device_placement)
-    
-    # Poseidon configuration
-    config.master_address = FLAGS.master_address
-    config.client_id = FLAGS.client_id
-    config.num_push_threads = 1
-    config.num_pull_threads = 1
+    if FLAGS.distributed:
+      config.distributed = FLAGS.distributed
+      config.master_address = FLAGS.master_address
+      config.client_id = FLAGS.client_id
 
     sess = tf.Session(config=config)
     sess.run(init)
 
     # Start the queue runners.
-    tf.train.start_queue_runners(sess=sess)
+    coord = tf.train.Coordinator()
+    enqueue_threads = tf.train.start_queue_runners(sess=sess, coord=coord)
 
     summary_writer = tf.train.SummaryWriter(FLAGS.train_dir, sess.graph)
 
@@ -129,6 +129,9 @@ def train():
       if step % 1000 == 0 or (step + 1) == FLAGS.max_steps:
         checkpoint_path = os.path.join(FLAGS.train_dir, 'model.ckpt')
         saver.save(sess, checkpoint_path, global_step=step)
+
+    coord.request_stop()
+    coord.join(enqueue_threads)
 
 
 def main(argv=None):  # pylint: disable=unused-argument
