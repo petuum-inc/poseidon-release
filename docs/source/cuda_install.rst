@@ -25,7 +25,7 @@ Run the following commands to set CUDA environment variables:
     export CUDA_HOME="/usr/local/cuda"
     export LD_LIBRARY_PATH="/usr/local/cuda/lib64"
 
-You may also put these commands into `~/.bashrc`` if you'd like to.
+You may also put these commands into ``~/.bashrc`` if you'd like to.
 
 
 Check NVIDIA Drivers
