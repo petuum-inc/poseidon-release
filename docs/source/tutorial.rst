@@ -1,14 +1,20 @@
 Quick Tutorial
 ==============
 
-For installation, see the installation instructions:
-
-.. toctree::
-   :maxdepth: 1
-
-   install
+For installation, see the installation instructions.
 
 Obtaining Data
 --------------
 
 This is how to obtain data...
+
+Training
+--------
+
+Poseidon Logs
+-------------
+
+Evaluating
+----------
+
+

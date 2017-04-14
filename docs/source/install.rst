@@ -11,6 +11,9 @@ Poseidon currently only runs on GPU clusters. CUDA and cudNN packages are requir
 
    cuda_install
 
+Installation Options
+====================
+
 Debian Installation
 -------------------
 
