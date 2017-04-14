@@ -20,6 +20,8 @@ Contents
 
    install
    tutorial
+   reference
+   known_issues
 
 Performance at a Glance
 -----------------------
