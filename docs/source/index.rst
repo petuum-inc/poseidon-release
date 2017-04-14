@@ -40,7 +40,8 @@ The following figure shows Poseidon's performance on scaling up four widely adop
 .. image:: https://c1.staticflickr.com/4/3900/32769057602_dcc944d4a5_n.jpg
    :height: 300px
 
-.. csv-table:: Throughput Measurements
+
+.. csv-table:: Throughput Configurations
    :widths: auto
    :align: center
    :header: "Name", "#parameters", "Dataset", "Batchsize (single node)"
