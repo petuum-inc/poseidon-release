@@ -16,7 +16,7 @@ The techniques present in Poseidon could be used to produce a better distributed
 Contents
 --------
 .. toctree::
-   :maxdepth: 3
+   :maxdepth: 4
 
    install
    tutorial
