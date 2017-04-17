@@ -1,4 +1,4 @@
-For installation, see the `installation instructions <install/#installation-options>`_.
+For installation, see the `installation instructions <../install/#installation-options>`_.
 
 Quick Tutorial
 ==============
