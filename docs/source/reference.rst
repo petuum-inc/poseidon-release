@@ -93,33 +93,25 @@ This table demonstrates the Poseidon settings, and ``psd_run`` defaults.
    * - Arg Name
      - Set by psd_run
      - Default
-     - Explanation
    * - distributed
      - True
      - True 
-     - Run using Poseidon
    * - master_address
      - True
      - master_address or localhost
-     - The connection string to ps_master node
    * - client_id
      - True
      - 0 -> N-1 (N is number of workers)
-     - The id of the particular worker
    * - num_push_threads
      - False
      - 4
-     - scale factor: workers to servers
    * - num_pull_threads
      - False
      - 8
-     - scale factor: servers to workers
    * - block_size
      - False
      - 4 MB
-     - tensors will be split over this size
    * - use_sfb
      - False
      - False
-     - Use Sufficient Factor Broadcasting hybrid protocol
 
