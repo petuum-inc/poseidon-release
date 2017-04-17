@@ -62,7 +62,7 @@ We must create a ``config.json`` to specify our cluster configurations. If runni
       ]
     }
 
-Note: replace ``cluster-key.pem`` with a path do your AWS pem file.
+Note: replace ``cluster-key.pem`` with a path to your AWS pem file.
 
 Download the Poseidon tutorial script into the same directory as ``config.json``:
 
