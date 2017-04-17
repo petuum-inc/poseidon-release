@@ -14,7 +14,7 @@ Pre-Install steps
 Poseidon currently only runs on GPU clusters. CUDA and cudNN packages are required before installation.
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
 
    cuda_install
 
