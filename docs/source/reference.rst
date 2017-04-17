@@ -42,4 +42,83 @@ Optional:
 Poseidon session initialization args
 ------------------------------------
 
-Posiedon worker scripts should be almost identical to native TensorFlow execution scripts, but with an extended session initialization object.
+Posiedon worker scripts should be almost identical to native TensorFlow, but with an extended session initialization object.
+
+In native TensorFlow, you initialize a session like this:
+
+.. code:: python
+
+    import tensorflow as tf
+    session = tf.session(config = None)
+    ...
+
+Poseidon extends the optional config object with several parameters like this:
+
+.. code:: python
+    
+    config = tf.ConfigProto(log_device_placement = FLAGS.log_device_placement)
+    config.master_address = FLAGS.master_address
+    config.client_id = FLAGS.client_id
+    config.num_push_threads = 1
+    config.num_pull_threads = 1
+    config.distributed = FLAGS.distributed
+    sess = tf.Session(config = config)
+
+``FLAGS`` here comes from ``tf.app.flags``. The three FLAGS parameters above could be configured like this:
+
+.. code:: python
+
+    tf.app.flags.DEFINE_boolean('distributed', False, "Use Poseidon")
+    tf.app.flags.DEFINE_string('master_address', "tcp://0.0.0.0:5555", "master address")
+    tf.app.flags.DEFINE_integer('client_id', -1, "client id")
+
+When we set config to have ``distributed = True`` this will initiate Poseidon.
+
+Note: ``psd_run`` adds the following flags to the worker when it launches:
+
+* distributed
+* master_address
+* client_id
+
+If you create a script to launch using ``psd_run``, simply add the FLAGS commands above and create a ``ConfigProto`` as above and the runner will automatically launch using your specifications. The above defaults are useful because when you launch without specifying ``distributed=True``, it will by default run as a native TensorFlow application.
+
+This table demonstrates the Poseidon settings, and ``psd_run`` defaults.
+
+.. list-table::
+   :widths: auto
+   :align: center
+   :header-rows: 1
+
+   * - Arg Name
+     - Required in FLAGS
+     - Default (psd_run)
+     - Explanation
+   * - distributed
+     - True
+     - True 
+     - Run using Poseidon
+   * - master_address
+     - True
+     - master_address or localhost
+     - The connection string to ps_master node
+   * - client_id
+     - True
+     - 0 -> N-1 (N is number of workers)
+     - The id of the particular worker
+   * - num_push_threads
+     - False
+     - 4
+     - scale factor for pushing parameters from workers to servers
+   * - num_pull_threads
+     - False
+     - 8
+     - scale factor for pushing parameters from servers to workers
+   * - block_size
+     - False
+     - 4 MB
+     - tensors will be cut into key-value pairs of this size
+   * - use_sfb
+     - False
+     - False
+     - Use Sufficient Factor Broadcasting hybrid protocol
+
