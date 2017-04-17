@@ -86,7 +86,7 @@ If you create a script to launch using ``psd_run``, simply add the FLAGS command
 This table demonstrates the Poseidon settings, and ``psd_run`` defaults.
 
 .. list-table::
-   :widths: 10 10 20 40
+   :widths: auto
    :align: center
    :header-rows: 1
 
