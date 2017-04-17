@@ -49,7 +49,7 @@ In native TensorFlow, you initialize a session like this:
 .. code:: python
 
     import tensorflow as tf
-    session = tf.session(config = None)
+    sess = tf.session(config = None)
     ...
 
 Poseidon extends the optional config object with several parameters like this:
@@ -63,6 +63,7 @@ Poseidon extends the optional config object with several parameters like this:
     config.num_pull_threads = 1
     config.distributed = FLAGS.distributed
     sess = tf.Session(config = config)
+    ...
 
 ``FLAGS`` here comes from ``tf.app.flags``. The three FLAGS parameters above could be configured like this:
 
@@ -85,13 +86,13 @@ If you create a script to launch using ``psd_run``, simply add the FLAGS command
 This table demonstrates the Poseidon settings, and ``psd_run`` defaults.
 
 .. list-table::
-   :widths: auto
+   :widths: 10 10 20 40
    :align: center
    :header-rows: 1
 
    * - Arg Name
-     - Required in FLAGS
-     - Default (psd_run)
+     - Set by psd_run
+     - Default
      - Explanation
    * - distributed
      - True
@@ -108,15 +109,15 @@ This table demonstrates the Poseidon settings, and ``psd_run`` defaults.
    * - num_push_threads
      - False
      - 4
-     - scale factor for pushing parameters from workers to servers
+     - scale factor: workers to servers
    * - num_pull_threads
      - False
      - 8
-     - scale factor for pushing parameters from servers to workers
+     - scale factor: servers to workers
    * - block_size
      - False
      - 4 MB
-     - tensors will be cut into key-value pairs of this size
+     - tensors will be split over this size
    * - use_sfb
      - False
      - False
