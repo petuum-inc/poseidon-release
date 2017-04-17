@@ -24,7 +24,7 @@ First, install ``pip`` as well as some OS specific core dependencies:
 
 
 Virtualenv (Optional)
-^^^^^^^^^^^^^^^^^^^^^
+---------------------
 
 Use virtualenv if you wish to install poseidon and tensorflow to a clean python environment.
 
