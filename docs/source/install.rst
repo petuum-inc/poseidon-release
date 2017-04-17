@@ -48,7 +48,3 @@ Cluster Installation
 
 To deploy Poseidon in a cluster environment, please follow the steps above for each cluster node.
 
-Note: If you installed poseidon using virtualenv, make sure to specify which python should run the scripts by launching python with the absolute path. For instance, if your username is ubuntu and you placed virtualenv in ``~/sandbox``:
-
-.. code:: bash
-    /home/ubuntu/sandbox/bin/python script.py --args
