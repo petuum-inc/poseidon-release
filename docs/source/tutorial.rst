@@ -15,6 +15,8 @@ Training
 
 Now, suppose you have Poseidon installed at ``/usr/local/lib/python2.7/dist-packages/tensorflow``, we will call it ``$POSEIDON_HOME`` below. Note that the namespace is 'tensorflow', to minimize the modification effort if porting to Posiedon from native TensorFlow. The main entry to run Poseidon tasks is ``psd_run``.
 
+Running ``psd_run -h`` should print this:
+
 .. code::
 
     Usage: 
@@ -44,10 +46,41 @@ Now, suppose you have Poseidon installed at ``/usr/local/lib/python2.7/dist-pack
                        output log folder
 
 
+Reference for ``psd_run`` can be found `here <../reference>`_.
+
+We must create a ``config.json`` to specify our cluster configurations. If running a single node on Ubuntu within an AWS instance (with no virtualenv), the configurations are very simple:
+
+.. code:: json
+
+    {
+      "pem_file": "cluster-key.pem",
+      "worker_nodes": [
+        "127.0.0.1"
+      ],
+      "server_nodes": [
+        "127.0.0.1"
+      ]
+    }
+
+Note: replace ``cluster-key.pem`` with a path do your AWS pem file.
+
+Download the Poseidon tutorial script into the same directory as ``config.json``:
+
+https://raw.githubusercontent.com/petuum-inc/poseidon-release/master/models/cifar10/cifar10_train.py
+
+We can now test Posiedon on a single node with the following command:
+
+.. code:: bash
+
+    psd_run -c config.json "python cifar10_train.py --max_steps 100"
+
+
 Poseidon Logs
 -------------
+
+After running Poseidon, you can check the execution log ``poseidon_run.log`` in the same path you ran ``psd_run``. There are also output log files for debugging and monitoring purpose created in ``poseidon_log_$TIMESTAMP_SUFFIX`` folder.
 
 Evaluating
 ----------
 
-
+Poseidon's evaluating procedure is the same as TensorFlow's. Please follow the tutorial `here <https://www.tensorflow.org/versions/r0.10/tutorials/deep_cnn/#evaluating_a_model>`_.
