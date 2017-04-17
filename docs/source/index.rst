@@ -9,9 +9,9 @@ The Poseidon engine is a modification of TensorFlow that keeps the `Tensorflow c
 Introduction
 ------------
 
-Poseidon is an efficient communication interface built into TensorFlow. It's purpose is to allow deep learning applications written and tested on single GPU nodes to easily scale onto a cluster environment. Poseidon exploits the sequential layer-by-layer structure common in deep learning architectures. It optimizes the separation of GPU computation and network communication operations in the training algorithm so that they can be scheduled together to reduce network bottlenecks. Moreover, Poseidon implements a hybrid communication scheme that can choose the most efficient communication protocol based on each layer's mathematical properties combined with the cluster configuration, in order to compute the network cost of different communication methods, and select the cheapest one -- currently, Poseidon implements and supports a `parameter server scheme <http://www.pdl.cmu.edu/PDL-FTP/BigLearning/CMU-PDL-15-105.pdf>`_ that is well-suited to small matrices, and a `sufficient factor broadcasting scheme <http://www.cs.cmu.edu/~pengtaox/papers/uai16_sfb.pdf>`_ that performs well on large matrices.
+Poseidon is a communication interface built into TensorFlow. Its purpose is to allow deep learning applications written and tested on single GPU nodes to easily scale onto a cluster environment. Poseidon exploits the sequential layer-by-layer structure common in deep learning architectures. It separates GPU computation and network communication operations in the training algorithm into a pipeline architecture to reduce network bottlenecks. Currently, Poseidon implements and supports a `parameter server scheme <http://www.pdl.cmu.edu/PDL-FTP/BigLearning/CMU-PDL-15-105.pdf>`_ that is well-suited to small matrices, and a `sufficient factor broadcasting scheme <http://www.cs.cmu.edu/~pengtaox/papers/uai16_sfb.pdf>`_ that performs well on large matrices. It can calculate which of these schemes will be the most efficient for each layer by taking into account each layer's size and the number of nodes in the cluster.
 
-The techniques present in Poseidon could be used to produce a better distributed version for any existing deep learning frameworks. This release includes Poseidon-enabled TensorFlow 0.10, making it more efficient and more scalable as a distributed deep learning system than native TensorFlow, but having TensorFlow as the computing engine.
+The techniques present in Poseidon could be used to produce a better distributed version for any existing deep learning framework. This release includes Poseidon-enabled TensorFlow 0.10, a more efficient, scalable distributed deep learning system than native TensorFlow, but having TensorFlow as the computing engine.
 
 Contents
 --------
@@ -26,11 +26,9 @@ Contents
 Performance at a Glance
 -----------------------
 
-Throughput Scalability
+Poseidon-enabled TensorFlow can scale almost linearly in total throughput with additional machines while simultaneously incurring little additional overhead.
 
-Poseidon-enabled TensorFlow can scale almost linearly in total throughput with additional machines while simultaneously incurring little additional overhead even in the single machine setting.
-
-The following figure shows Poseidon's performance on scaling up four widely adopted neural networks (see the table for their configurations) using distributed GPU clusters.
+The following figures show Poseidon's performance on four widely adopted neural networks (see the table for their configurations) using distributed GPU clusters.
 
 .. image:: https://c1.staticflickr.com/3/2632/32079844734_79b632baa7_n.jpg
    :height: 300px
@@ -80,4 +78,6 @@ Contact
 -------
 
 * Adam Schwab - adam.schwab@petuum.com
+* Hong Wu - hong.wu@petuum.com
+* Hao Zhang - hao.zhang@petuum.com
 
