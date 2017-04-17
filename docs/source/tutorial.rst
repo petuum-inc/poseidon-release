@@ -13,9 +13,7 @@ The dataset will be downloaded automatically when you run the training code. In 
 Training
 --------
 
-Now, suppose you have Poseidon installed at ``/usr/local/lib/python2.7/dist-packages/tensorflow``, we will call it ``$POSEIDON_HOME`` below. Note that the namespace is 'tensorflow', to minimize the modification effort if porting to Posiedon from native TensorFlow. The main entry to run Poseidon tasks is ``psd_run``.
-
-Running ``psd_run -h`` should print this:
+The main entry to run Poseidon tasks is ``psd_run``. Running ``psd_run -h`` should print this:
 
 .. code::
 
