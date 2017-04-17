@@ -32,14 +32,14 @@ Debian Installation
 ^^^^^^^^^^^^^^^^^^^
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
 
    debian_install
 
 Pip Installation
 ^^^^^^^^^^^^^^^^
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
 
    pip_install
 
