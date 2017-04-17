@@ -1,14 +1,14 @@
 CUDA Installation
 -----------------
 
-TensorFlow uses the Nvidia library CUDA (and the machine learning patch cudNN) to run certain computation-heavy operations on GPUs. Thus, in order to launch a Poseidon job you must first install CUDA and cudNN.
+TensorFlow uses the Nvidia library CUDA (and the machine learning patch cuDNN) to run certain computation-heavy operations on GPUs. Thus, in order to launch a Poseidon job you must first install CUDA and cuDNN.
 
 CUDA
 ^^^^
 
 Refer to `this link <https://developer.nvidia.com/cuda-downloads>`_ to download and install the CUDA toolkit. Download the version 8.0 deb/rpm local package and then follow the installation instructions listed underneath the download link. The default installation will place the toolkit into ``/usr/local/cuda-8.0`` and will create a symbolic folder at ``/usr/local/cuda``.
 
-cudNN
+cuDNN
 ^^^^^
 
 Download cuDNN v5.1 from `here <https://developer.nvidia.com/cudnn>`_. Choose the appropriate library download for your operating system. The following bash instructions will uncompress and copy the cuDNN files into the toolkit directory. Assuming the toolkit is installed in ``/usr/local/cuda``, run the following commands (edited to reflect the cuDNN version you downloaded):
