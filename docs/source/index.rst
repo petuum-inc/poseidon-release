@@ -2,7 +2,7 @@
 Welcome to Poseidon
 ===================
 
-Poseidon is a highly scalable and efficient system architecture for large-scale deep learning on GPU clusters. This is the document website for Poseidon-Tensorflow Release 0.10.
+Poseidon is a highly scalable and efficient system architecture for large-scale deep learning on GPU clusters. This is the documentation for Poseidon-TensorFlow Release 0.10.
 
 The Poseidon engine is a modification of TensorFlow that keeps the `Tensorflow client API <https://www.tensorflow.org/versions/r0.10/>`_ intact.
 
