@@ -94,6 +94,8 @@ def train():
       config.distributed = FLAGS.distributed
       config.master_address = FLAGS.master_address
       config.client_id = FLAGS.client_id
+      config.num_push_threads = 1
+      config.num_pull_threads = 1
 
     sess = tf.Session(config=config)
     sess.run(init)
