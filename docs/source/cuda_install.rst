@@ -20,15 +20,11 @@ Download cuDNN v5.1 from `here <https://developer.nvidia.com/cudnn>`_. Choose th
     sudo cp -P cuda/lib64/libcudnn* /usr/local/cuda/lib64
     sudo chmod a+r /usr/local/cuda/include/cudnn.h /usr/local/cuda/lib64/libcudnn*
 
-Run the following commands to set CUDA environment variables:
+Finally, run the following command to refresh the shared object cache:
 
 .. code:: bash
 
-    export CUDA_HOME="/usr/local/cuda"
-    export LD_LIBRARY_PATH="/usr/local/cuda/lib64"
-
-You may also put these commands into ``~/.bashrc`` if you'd like to.
-
+    sudo ldconfig
 
 Check NVIDIA Drivers
 --------------------
