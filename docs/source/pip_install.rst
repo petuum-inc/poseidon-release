@@ -19,7 +19,7 @@ First, install ``pip`` as well as some OS specific core dependencies:
     
     # Ubuntu 14.04 and 16.04 64-bit
     sudo apt-get update
-    sudo apt-get install python-pip libssl-dev
+    sudo apt-get install python-pip libssl-dev python-dev libffi-dev
 
 
 
