@@ -8,12 +8,12 @@ This is a quick tutorial to run a distributed Poseidon task. In this tutorial, w
 Data
 ----
 
-The dataset will be downloaded automatically when you run the training code. In other words, the dataset is shared in the server across network. You can also put your dataset in a distributed file system or in the same system path.
+The dataset will download automatically when you run the training code with the default options. You can also put your dataset in a distributed file system.
 
 Training
 --------
 
-The main entry to run Poseidon tasks is ``psd_run``. Running ``psd_run -h`` should print this:
+The executable for running Poseidon tasks is ``psd_run``. Running ``psd_run -h`` should print this:
 
 .. code::
 
@@ -43,8 +43,6 @@ The main entry to run Poseidon tasks is ``psd_run``. Running ``psd_run -h`` shou
       -o OUTPUT_FOLDER, --out=OUTPUT_FOLDER
                        output log folder
 
-
-Reference for ``psd_run`` can be found `here <../reference>`_.
 
 We must create a ``config.json`` to specify our cluster configurations. If running a single node on Ubuntu within an AWS instance (with no virtualenv), the configurations are very simple:
 

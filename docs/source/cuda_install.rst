@@ -35,5 +35,5 @@ Check NVIDIA Drivers
 
 Sometimes GPU device drivers are incorrectly configured. To make sure your GPU drivers are installed properly, run ``nvidia-smi`` on the terminal. A box should show up with the installed GPUs and some stats such as temperature, etc. If this fails, you will need to update to the latest drivers.
 
-If your operating system is CentOS 7.2, you can refer to the `Known Issues section <../known_issues/#no-nvidia-gpu-device-drivers-found-for-centos-7-2-aws>`_ of the tutorial for advice.
+If your operating system is CentOS 7.2, you can refer to the `Troubleshooting section <../troubleshoot/#no-nvidia-gpu-device-drivers-found-for-centos-7-2-aws>`_ of the tutorial for advice.
 

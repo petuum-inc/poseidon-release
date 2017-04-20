@@ -1,5 +1,5 @@
-Known Issues
-============
+Troubleshooting
+===============
 
 No Nvidia GPU device drivers found for CentOS 7.2 (AWS)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

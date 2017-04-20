@@ -11,7 +11,7 @@ Supported Operating Systems
 Pre-Install steps
 -----------------
 
-Poseidon currently only runs on GPU clusters. CUDA and cuDNN packages are required before installation.
+Poseidon runs on GPU clusters. The following steps outline the installation of GPU libraries CUDA and cuDNN:
 
 .. toctree::
    :maxdepth: 2
@@ -26,10 +26,10 @@ Poseidon currently supports two ways of installing:
 * Debian packaging system (``apt_get``) for clean Ubuntu systems that will not have conflicting dependencies.
 * Pip installation: install directly into an existing python2.7 using pip
 
-The debian packaging system is an easier process, and is preferred when installing many machines in a cluster environment. However, if you have a CentOS machine or a complicated python setup (such as ``virtualenv``) it would be advisable to use the pip installation method instead.
+The debian packaging system is an easier process, and is preferred when installing many machines in a cluster environment. However, if you have a CentOS machine or a customized python setup (such as ``virtualenv``) it would be advisable to use the pip installation method instead.
 
 Ubuntu/Debian Installation
-^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. toctree::
    :maxdepth: 1
@@ -43,8 +43,8 @@ Pip Installation
 
    pip_install
 
-Cluster Installation
+Running on a Cluster
 --------------------
 
-To deploy Poseidon in a cluster environment, please follow the steps above for each cluster node.
+Running Poseidon in a cluster environment is simple and is outlined in the next section. Beforehand, install Poseidon using the steps above for each node in your cluster.
 

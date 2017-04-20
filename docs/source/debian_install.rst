@@ -1,5 +1,5 @@
 
-Don't forget to install CUDA and cuDNN. Once this is complete, follow these steps...
+Don't forget to install CUDA and cuDNN. Once this is complete, follow these steps.
 
 Install
 -------
@@ -23,4 +23,7 @@ Uninstalling with the debian packaging manager simply means removing the core pa
 .. code:: bash
     
     sudo apt-get remove poseidon
+    
+    # Note you can also remove the debian install repository:
+    sudo apt-get purge poseidon-repo
 
