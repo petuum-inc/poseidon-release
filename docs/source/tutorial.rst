@@ -62,7 +62,7 @@ Note: replace ``cluster-key.pem`` with a path to your AWS pem file.
 
 Download the Poseidon tutorial script into the same directory as ``config.json``:
 
-https://raw.githubusercontent.com/petuum-inc/poseidon-release/master/models/cifar10/cifar10_train.py
+https://raw.githubusercontent.com/petuum-inc/poseidon-release/v0.10/models/cifar10/cifar10_train.py
 
 We can now test Posiedon on a single node with the following command:
 
