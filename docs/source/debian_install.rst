@@ -10,8 +10,8 @@ This creates an ``apt-get`` repository on your system with a few dependencies in
 
 .. code:: bash
     
-    wget -O poseidon-repo-ubuntu1404-0.10_amd64.deb https://github.com/sailing-pmls/storage/blob/master/poseidon/deb/ubuntu/poseidon-repo-ubuntu1404-0.10_amd64.deb?raw=true
-    sudo dpkg -i poseidon-repo-ubuntu1404-0.10_amd64.deb
+    wget -O poseidon-repo-ubuntu1404_0.10_amd64.deb https://github.com/sailing-pmls/storage/blob/master/poseidon/deb/ubuntu/poseidon-repo-ubuntu1404_0.10_amd64.deb?raw=true
+    sudo dpkg -i poseidon-repo-ubuntu1404_0.10_amd64.deb
     sudo apt-get update
     sudo apt-get install poseidon
 
