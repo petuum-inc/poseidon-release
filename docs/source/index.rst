@@ -2,7 +2,7 @@
 Welcome to Poseidon
 ===================
 
-Poseidon is a highly scalable and efficient system architecture for large-scale deep learning.
+Poseidon is an easy-to-use and efficient system architecture for large-scale deep learning.
 
 This distribution of Poseidon uses the `Tensorflow 0.10 client API <https://www.tensorflow.org/versions/r0.10/>`_.
 
