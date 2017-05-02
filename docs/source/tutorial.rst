@@ -66,8 +66,8 @@ https://raw.githubusercontent.com/petuum-inc/poseidon-release/v0.10/models/cifar
 
 Note: this is almost the same script with the native tensorflow program. The only difference is that we add following few lines of code which will pass the arguments to Poseidon backend.
 
-.. code:: python
-  
+.. code::
+ 
   tf.app.flags.DEFINE_boolean('distributed', False, "Mode.")
   tf.app.flags.DEFINE_string('master_address', "tcp://0.0.0.0:5555", "master address")
   # in train() function
