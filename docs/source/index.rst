@@ -19,6 +19,7 @@ Contents
    install
    tutorial
    troubleshoot
+   reference
 
 Performance at a Glance
 -----------------------
