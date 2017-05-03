@@ -59,7 +59,7 @@ Note: if you are not using virtualenv, you may need to ``sudo`` the following in
 
     pip install --upgrade setuptools==30.1.0 protobuf==3.1.0 numpy paramiko
 
-    pip install https://github.com/sailing-pmls/storage/blob/master/poseidon/wheel/linux/gpu/poseidon-0.10.0-cp27-none-linux_x86_64.whl?raw=true
+    pip install https://github.com/petuum-inc/storage/blob/master/poseidon/wheel/linux/gpu/poseidon-0.10.0-cp27-none-linux_x86_64.whl?raw=true
 
 Uninstall
 ---------

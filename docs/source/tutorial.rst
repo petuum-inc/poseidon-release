@@ -64,6 +64,18 @@ Download the Poseidon tutorial script into the same directory as ``config.json``
 
 https://raw.githubusercontent.com/petuum-inc/poseidon-release/v0.10/models/cifar10/cifar10_train.py
 
+Note: this is almost the same script with the native tensorflow program. The only difference is that we add following few lines of code which will pass the arguments to Poseidon backend.
+
+.. code::
+ 
+  tf.app.flags.DEFINE_boolean('distributed', False, "Mode.")
+  tf.app.flags.DEFINE_string('master_address', "tcp://0.0.0.0:5555", "master address")
+  # in train() function
+  if FLAGS.distributed:
+    config.distributed = FLAGS.distributed
+    config.master_address = FLAGS.master_address
+    config.client_id = FLAGS.client_id
+
 We can now test Posiedon on a single node with the following command:
 
 .. code:: bash
