@@ -81,7 +81,10 @@ We can now test Posiedon with the following command. The script, ``cifar10_train
 
 .. code:: bash
     
+    # The model is in the Poseidon install directory. This line gets the Poseidon home.
     POSEIDON_HOME=`python -c 'import os; import tensorflow; print os.path.dirname(tensorflow.__file__)'`
+    
+    # If you wish to view the model, cifarNet, it is in $POSEIDON_HOME/models/image/cifar10
     psd_run -c config.json "python $POSEIDON_HOME/models/image/cifar10/cifar10_train.py --max_steps 1000"
 
 
