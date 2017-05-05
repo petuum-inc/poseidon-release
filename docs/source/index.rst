@@ -17,7 +17,8 @@ Contents
    :maxdepth: 4
 
    install
-   tutorial
+   tutorial-aws
+   tutorial-private
    troubleshoot
    reference
 
