@@ -47,11 +47,12 @@ The executable for running Poseidon tasks is ``psd_run``. Running ``psd_run -h``
       -o,--out OUTPUT_FOLDER
                             output log folder
 
-Say we wish to run Poseidon on two nodes, IP1 and IP2. We must create a ``config.json`` to specify our configurations. The runner ``psd_run`` uses ssh to communicate with the cluster, so certain options must be added, such as username.
+Say we wish to run Poseidon on two nodes, IP1 and IP2. We must create a ``config.json`` to specify our configurations. The runner ``psd_run`` uses ssh to communicate with the cluster, so certain options must be added, such as username. If you wish to use a virtualenv, you can specify it using the json as well. The path should correspond to $VIRTUAL_ENV environment variable (after virtualenv ``activate`` script has been run). Note below that the virtualenv keyword is optional. Remove if you installed without virtualenv.
 
 .. code:: json
 
     {
+      "virtualenv": "/path/to/virtualenv",
       "username": "<cluster username>",
       "worker_nodes": [
         "<IP1>",
@@ -70,6 +71,7 @@ For security reasons, the script does not allow passwords in ssh. Therefore, no-
     ssh-keygen
     # Use defaults (press ENTER three times)
     
+    ssh-copy-id -i ~/.ssh/id_rsa.pub <cluster username>@<IP1>
     ssh-copy-id -i ~/.ssh/id_rsa.pub <cluster username>@<IP2>
     # Enter password
 
@@ -84,9 +86,9 @@ We can now test Posiedon with the following command. The script, ``cifar10_train
     # The model is in the Poseidon install directory. This line gets the Poseidon home.
     POSEIDON_HOME=`python -c 'import os; import tensorflow; print os.path.dirname(tensorflow.__file__)'`
     
-    # If you wish to view the model, cifarNet, it is in $POSEIDON_HOME/models/image/cifar10
     psd_run -c config.json "python $POSEIDON_HOME/models/image/cifar10/cifar10_train.py --max_steps 1000"
 
+Note that the above script for cifarNet is included in the Poseidon release. If you wish to view the model, it is located in ``$POSEIDON_HOME/models/image/cifar10``.
 
 Poseidon Logs
 -------------
