@@ -47,6 +47,10 @@ The executable for running Poseidon tasks is ``psd_run``. Running ``psd_run -h``
       -o,--out OUTPUT_FOLDER
                             output log folder
 
+
+Setup
+^^^^^
+
 Say we wish to run Poseidon on two nodes, IP1 and IP2. We must create a ``config.json`` to specify our configurations. The runner ``psd_run`` uses ssh to communicate with the cluster, so certain options must be added, such as username. If you wish to use a virtualenv, you can specify it using the json as well. The path should correspond to $VIRTUAL_ENV environment variable (after virtualenv ``activate`` script has been run). Note below that the virtualenv keyword is optional. Remove if you installed without virtualenv.
 
 .. code:: json
@@ -79,7 +83,10 @@ For security reasons, the script does not allow passwords in ssh. Therefore, no-
     ssh <cluster username>@<IP2>
     exit
 
-We can now test Posiedon with the following command. The script, ``cifar10_train.py`` is an example model script included with the Poseidon installation.
+Execution
+^^^^^^^^^
+
+We can now launch Posiedon with the following command. The script, ``cifar10_train.py`` is an example model script included with the Poseidon installation.
 
 .. code:: bash
     

@@ -47,6 +47,9 @@ The executable for running Poseidon tasks is ``psd_run``. Running ``psd_run -h``
       -o,--out OUTPUT_FOLDER
                             output log folder
 
+Setup
+^^^^^
+
 We must create a ``config.json`` to specify our cluster configurations. If running a single node on Ubuntu within an AWS instance (with no virtualenv), the configurations are very simple:
 
 .. code:: json
@@ -63,12 +66,19 @@ We must create a ``config.json`` to specify our cluster configurations. If runni
 
 Note: replace ``cluster-key.pem`` with a path to your AWS pem file.
 
-We can now test Posiedon with the following command. The script, ``cifar10_train.py`` is an example model script included with the Poseidon installation.
+Execution
+^^^^^^^^^
+
+We can now launch Posiedon with the following command. The script, ``cifar10_train.py`` is an example model script included with the Poseidon installation.
 
 .. code:: bash
     
+    # The model is in the Poseidon install directory. This line gets the Poseidon home.
     POSEIDON_HOME=`python -c 'import os; import tensorflow; print os.path.dirname(tensorflow.__file__)'`
+            
     psd_run -c config.json "python $POSEIDON_HOME/models/image/cifar10/cifar10_train.py --max_steps 1000"
+
+Note that the above script for cifarNet is included in the Poseidon release. If you wish to view the model, it is located in ``$POSEIDON_HOME/models/image/cifar10``.
 
 
 Poseidon Logs
