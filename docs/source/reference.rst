@@ -1,8 +1,8 @@
-Reference for psd_run
-=====================
+Reference
+=========
 
-Command Line Options
---------------------
+Command Line Options for psd_run
+--------------------------------
 
 psd_run options "<TensorFlow command>"
 
@@ -29,8 +29,8 @@ Optional:
 * virtualenv - If using python within a virtualenv, point to the virtualenv root directory (equivalent to  echo $VIRTUAL_ENV).
 * username - Set global username for all processes/communication. The username should be set for ssh no-password authentication on all machines. The default is ubuntu.
 
-Poseidon session initialization args
-------------------------------------
+Extend TensorFlow Script For Poseidon
+-------------------------------------
 
 Posiedon worker scripts should be almost identical to native TensorFlow, but with an extended session initialization object.
 
