@@ -27,7 +27,7 @@ Below is an example TensorFlow script, we'll call it ``mymodel_train.py``:
       sess.run(init)
       for step in xrange(FLAGS.max_steps):
         model_out = sess.run(model_op)
-        print 'step ' + str(step) + ' ' + model_out
+        print 'step ' + str(step) + ' ' + str(model_out)
 
     def main(argv=None):
       train()
@@ -78,7 +78,7 @@ A modified ``mymodel_train.py`` for Poseidon would look like the following:
       sess.run(init)
       for step in xrange(FLAGS.max_steps):
         model_out = sess.run(model_op)
-        print 'step ' + str(step) + ' ' + model_out
+        print 'step ' + str(step) + ' ' + str(model_out)
 
     def main(argv=None):
       train()
