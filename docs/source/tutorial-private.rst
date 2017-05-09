@@ -1,7 +1,7 @@
 For installation, see the `installation instructions <../install/#installation-options>`_.
 
-Quick Tutorial (private cluster)
-================================
+Quick Tutorial: Private Cluster
+===============================
 
 This is a quick tutorial to run a distributed Poseidon task on a private cluster. In this tutorial, we will use `CIFAR-10 <http://www.cs.toronto.edu/~kriz/cifar.html>`_, which is a common benchmark in machine learning for image recognition using convolutional neural networks (CNN). More detailed instructions on how to get started are available at: https://www.tensorflow.org/versions/r0.10/tutorials/deep_cnn/.
 
