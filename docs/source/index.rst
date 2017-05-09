@@ -17,10 +17,9 @@ Contents
    :maxdepth: 4
 
    install
-   tutorial-aws
-   tutorial-private
-   troubleshoot
+   tutorial
    reference
+   troubleshoot
 
 Performance at a Glance
 -----------------------
