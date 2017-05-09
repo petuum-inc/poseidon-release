@@ -39,7 +39,7 @@ The above could be executed with the following command:
 
 .. code:: bash
 
-    python mymodel_train.py --max_steps 1000
+    python mymodel_train.py --max_steps 10
 
 A modified ``mymodel_train.py`` for Poseidon would look like the following:
       
@@ -54,7 +54,7 @@ A modified ``mymodel_train.py`` for Poseidon would look like the following:
     tf.app.flags.DEFINE_string('master_address', "tcp://0.0.0.0:5555", "master address")
     tf.app.flags.DEFINE_integer('client_id', -1, "client id")
 
-    tf.app.flags.DEFINE_integer('max_steps', 100, 'Loop count')
+    tf.app.flags.DEFINE_integer('max_steps', 5, 'Loop count')
     
     def model():
       x1 = tf.Variable(1.5, name='x1')
@@ -90,7 +90,7 @@ Given a config.json file, Poseidon can be executed using the above script with t
 
 .. code:: bash
 
-    psd_run -c config.json -o ~/logs "python mymodel_train.py --max_steps 1000"
+    psd_run -c config.json -o ~/logs "python mymodel_train.py --max_steps 10"
 
 Note: ``psd_run`` adds the following flags to the worker when it launches:
 
