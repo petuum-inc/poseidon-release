@@ -41,8 +41,33 @@ The above could be executed with the following command:
 
     python mymodel_train.py --max_steps 10
 
-A modified ``mymodel_train.py`` for Poseidon would look like the following:
-      
+A modified ``mymodel_train.py`` for Poseidon will have three changes.
+
+1. Add three commandline arguments - distributed, master_address and client_id:
+
+.. code:: python
+
+    tf.app.flags.DEFINE_boolean('distributed', False, "Use Poseidon")
+    tf.app.flags.DEFINE_string('master_address', "tcp://0.0.0.0:5555", "master address")
+    tf.app.flags.DEFINE_integer('client_id', -1, "client id")
+    
+2. Build a tf.ConfigProto() using these commandline args:
+
+.. code:: python
+
+    config = tf.ConfigProto()
+    config.master_address = FLAGS.master_address
+    config.client_id = FLAGS.client_id
+    config.distributed = FLAGS.distributed
+
+3. Call tf.Session with the new config object:
+
+.. code:: python
+
+    sess = tf.Session(config = config)
+
+Putting the three changes together, we get the script below.
+
 .. code:: python
 
     import tensorflow as tf
@@ -86,7 +111,7 @@ A modified ``mymodel_train.py`` for Poseidon would look like the following:
     if __name__ == '__main__':
       tf.app.run()
 
-Given a config.json file, Poseidon can be executed using the above script with the command below (remember to change /path/to/mymodel_train.py):
+Given a config.json file, Poseidon can be executed using the above script with the following command (remember to change /path/to/mymodel_train.py):
 
 .. code:: bash
 
