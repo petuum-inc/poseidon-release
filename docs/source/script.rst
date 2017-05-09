@@ -86,11 +86,11 @@ A modified ``mymodel_train.py`` for Poseidon would look like the following:
     if __name__ == '__main__':
       tf.app.run()
 
-Given a config.json file, Poseidon can be executed using the above script with the command below:
+Given a config.json file, Poseidon can be executed using the above script with the command below (remember to change /path/to/mymodel_train.py):
 
 .. code:: bash
 
-    psd_run -c config.json -o ~/logs "python mymodel_train.py --max_steps 10"
+    psd_run -c config.json -o ~/logs "python /path/to/mymodel_train.py --max_steps 10"
 
 Note: ``psd_run`` adds the following flags to the worker when it launches:
 
