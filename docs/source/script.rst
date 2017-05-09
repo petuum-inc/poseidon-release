@@ -53,7 +53,8 @@ A modified ``mymodel_train.py`` for Poseidon would look like the following:
     tf.app.flags.DEFINE_integer('max_steps', 100, 'Loop count')
 
     def train():
-      model_op = mymodel.train()
+      with tf.device('/gpu:0'):
+        model_op = mymodel.train()
       init = tf.initialize_all_variables()
 
       # Add a config variable to pass Poseidon settings
