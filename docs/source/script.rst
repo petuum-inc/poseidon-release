@@ -1,4 +1,4 @@
-Create Poseidon Program From Tensorflow
+Create Poseidon Program From TensorFlow
 ---------------------------------------
 
 Posiedon worker scripts are almost identical to native TensorFlow, but with an extended session initialization object. In order to demonstrate the changes, we have a native TensorFlow script with a corresponding Poseidon script.
