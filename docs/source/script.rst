@@ -1,7 +1,9 @@
-Create Poseidon Program From TensorFlow
----------------------------------------
+Port TensorFlow Script to Poseidon
+----------------------------------
 
 Posiedon worker scripts are almost identical to native TensorFlow, but with an extended session initialization object. In order to demonstrate the changes, we have a native TensorFlow script with a corresponding Poseidon script.
+
+Remember that for this release, Poseidon scripts must be compatible with TensorFlow 0.10 API.
 
 Below is an example TensorFlow script, we'll call it ``mymodel_train.py``:
 
