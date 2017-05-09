@@ -8,15 +8,20 @@ Below is an example TensorFlow script, we'll call it ``mymodel_train.py``:
 .. code:: python
 
     import tensorflow as tf
-    import mymodel # Ficticious model
 
     FLAGS = tf.app.flags.FLAGS
 
-    tf.app.flags.DEFINE_integer('max_steps', 100, 'Loop count')
+    tf.app.flags.DEFINE_integer('max_steps', 5, 'Loop count')
+
+    def model():
+      x1 = tf.Variable(1.5, name='x1')
+      x2 = tf.Variable(3.5, name='x2')
+      out = x1 + 2 * x2
+      grads = tf.gradients(ys=[out], xs=[x1, x2])
+      return grads
 
     def train():
-      with tf.device('/gpu:0'):
-        model_op = mymodel.train() # Define model
+      model_op = model()
       init = tf.initialize_all_variables()
       sess = tf.Session()
       sess.run(init)
@@ -41,7 +46,6 @@ A modified ``mymodel_train.py`` for Poseidon would look like the following:
 .. code:: python
 
     import tensorflow as tf
-    import mymodel
 
     FLAGS = tf.app.flags.FLAGS
     
@@ -51,10 +55,16 @@ A modified ``mymodel_train.py`` for Poseidon would look like the following:
     tf.app.flags.DEFINE_integer('client_id', -1, "client id")
 
     tf.app.flags.DEFINE_integer('max_steps', 100, 'Loop count')
+    
+    def model():
+      x1 = tf.Variable(1.5, name='x1')
+      x2 = tf.Variable(3.5, name='x2')
+      out = x1 + 2 * x2
+      grads = tf.gradients(ys=[out], xs=[x1, x2])
+      return grads
 
     def train():
-      with tf.device('/gpu:0'):
-        model_op = mymodel.train()
+      model_op = model()
       init = tf.initialize_all_variables()
 
       # Add a config variable to pass Poseidon settings
