@@ -10,7 +10,7 @@ Poseidon is designed to be able to run on a variety of different clusters. Below
    tutorial-aws
    tutorial-private
 
-In order to run python scripts using Poseidon, slight adjustments must be made. The page belowwalks throught an example TensorFlow script and shows how it can be altered for Poseidon.
+In order to run python scripts using Poseidon, slight adjustments must be made. The page below walks throught an example TensorFlow script and shows how it can be altered for Poseidon.
 
 .. toctree::
    :maxdepth: 2
