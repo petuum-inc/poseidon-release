@@ -68,6 +68,8 @@ A modified ``mymodel_train.py`` for Poseidon will have three changes.
 
     sess = tf.Session(config = config)
 
+Here, if you use other interfaces like ``tf.contrib.slim`` interface, you can pass this config object as the argument of ``slim.learning.train`` function.
+
 Putting the three changes together, we get the script below.
 
 .. code:: python
