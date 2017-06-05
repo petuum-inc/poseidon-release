@@ -1,14 +1,5 @@
-For installation, see the `installation instructions <../install/#installation-options>`_.
-
 Quick Tutorial: Private Cluster
 ===============================
-
-This is a quick tutorial to run a distributed Poseidon task on a private cluster. In this tutorial, we will use `CIFAR-10 <http://www.cs.toronto.edu/~kriz/cifar.html>`_, which is a common benchmark in machine learning for image recognition using convolutional neural networks (CNN). More detailed instructions on how to get started are available at: https://www.tensorflow.org/versions/r0.10/tutorials/deep_cnn/.
-
-Data
-----
-
-The dataset will download automatically when you run the training code with the default options. You can also put your dataset in a distributed file system.
 
 Training
 --------
@@ -51,7 +42,9 @@ The executable for running Poseidon tasks is ``psd_run``. Running ``psd_run -h``
 Setup
 ^^^^^
 
-Say we wish to run Poseidon on two nodes, IP1 and IP2. We must create a ``config.json`` to specify our configurations. The runner ``psd_run`` uses ssh to communicate with the cluster, so certain options must be added, such as username. If you wish to use a virtualenv, you can specify it using the json as well. The path should correspond to $VIRTUAL_ENV environment variable (after virtualenv ``activate`` script has been run). Note below that the virtualenv keyword is optional. Remove if you installed without virtualenv.
+Say we wish to run Poseidon on two nodes, IP1 and IP2. We must create a ``config.json`` to specify our configurations. The runner ``psd_run`` uses ssh to communicate with the cluster, so certain options must be added, such as username. If you wish to use a virtualenv, you can specify it using the json as well. The path should correspond to $VIRTUAL_ENV environment variable (after virtualenv ``activate`` script has been run).
+
+Note below that the virtualenv keyword is optional. Remove if you installed without virtualenv.
 
 .. code:: json
 
@@ -90,19 +83,10 @@ We can now launch Posiedon with the following command. The script, ``cifar10_tra
 
 .. code:: bash
     
-    # The model is in the Poseidon install directory. This line gets the Poseidon home.
-    POSEIDON_HOME=`python -c 'import os; import tensorflow; print os.path.dirname(tensorflow.__file__)'`
-    
-    psd_run -c config.json "python $POSEIDON_HOME/models/image/cifar10/cifar10_train.py --max_steps 1000"
-
-Note that the above script for cifarNet is included in the Poseidon release. If you wish to view the model, it is located in ``$POSEIDON_HOME/models/image/cifar10``.
+    psd_run -c config.json "python $TF_MODEL_HOME/tutorial/models/image/cifar10/cifar10_train.py --max_steps 1000"
 
 Poseidon Logs
 -------------
 
 After running Poseidon, you can check the execution log ``poseidon_run.log`` in the same path you ran ``psd_run``. There are also output log files for debugging and monitoring purpose created in ``poseidon_log_$TIMESTAMP_SUFFIX`` folder.
 
-Evaluating
-----------
-
-Poseidon's evaluating procedure is the same as TensorFlow's. Please follow the tutorial `here <https://www.tensorflow.org/versions/r0.10/tutorials/deep_cnn/#evaluating_a_model>`_.

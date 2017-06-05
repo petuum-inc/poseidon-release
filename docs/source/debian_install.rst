@@ -6,14 +6,10 @@ Install
 
 Currently quick installation is only possible with Ubuntu through the debian packaging system.
 
-This creates an ``apt-get`` repository on your system with a few dependencies in it as local ``deb`` files. The final step is to install the core Poseidon project, and it will automatically install all the dependencies.
-
 .. code:: bash
     
-    wget -O poseidon-repo-ubuntu1404_0.10_amd64.deb https://github.com/petuum-inc/storage/blob/master/poseidon/deb/ubuntu/poseidon-repo-ubuntu1404_0.10_amd64.deb?raw=true
-    sudo dpkg -i poseidon-repo-ubuntu1404_0.10_amd64.deb
-    sudo apt-get update
-    sudo apt-get install poseidon
+    wget -O poseidon-repo-ubuntu1404_1.0.1_amd64.deb https://github.com/petuum-inc/storage/blob/master/poseidon/deb/ubuntu/poseidon-repo-ubuntu1404_1.0.1_amd64.deb?raw=true
+    sudo dpkg -i poseidon-repo-ubuntu1404_1.0.1_amd64.deb
 
 Uninstall
 ---------
@@ -24,6 +20,3 @@ Uninstalling with the debian packaging manager simply means removing the core pa
     
     sudo apt-get remove poseidon
     
-    # Note you can also remove the debian install repository:
-    sudo apt-get purge poseidon-repo
-

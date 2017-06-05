@@ -29,37 +29,3 @@ Optional:
 * virtualenv - If using python within a virtualenv, point to the virtualenv root directory (equivalent to  echo $VIRTUAL_ENV).
 * username - Set global username for all processes/communication. The username should be set for ssh no-password authentication on all machines. The default is ubuntu.
 
-ConfigProto Posiedon Options
-----------------------------
-
-This table demonstrates the Poseidon settings, and ``psd_run`` defaults.
-
-.. list-table::
-   :widths: auto
-   :align: center
-   :header-rows: 1
-
-   * - Arg Name
-     - Set by psd_run
-     - Default
-   * - distributed
-     - True
-     - True 
-   * - master_address
-     - True
-     - master_address in json or localhost
-   * - client_id
-     - True
-     - 0 -> N-1 (N is number of workers)
-   * - num_push_threads
-     - False
-     - 1
-   * - num_pull_threads
-     - False
-     - 1
-   * - block_size
-     - False
-     - 4 MB
-   * - use_sfb
-     - False
-     - False
