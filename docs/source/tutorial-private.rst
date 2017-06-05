@@ -1,5 +1,5 @@
-Quick Tutorial: Private Cluster
-===============================
+Poseidon on a Private Cluster
+=============================
 
 Training
 --------

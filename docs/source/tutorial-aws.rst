@@ -62,7 +62,7 @@ Note: if running on multiple AWS nodes, add each node's private IP in the worker
 Execution
 ^^^^^^^^^
 
-We can now launch Posiedon with the following command.
+We can now launch Posiedon with the following command:
 
 .. code:: bash
     
