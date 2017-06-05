@@ -1,5 +1,5 @@
-Quick Tutorial: AWS Cluster
-===========================
+Poseidon on AWS Cluster
+=======================
 
 Training
 --------
@@ -62,7 +62,7 @@ Note: if running on multiple AWS nodes, add each node's private IP in the worker
 Execution
 ^^^^^^^^^
 
-We can now launch Posiedon with the following command. The script, ``cifar10_train.py`` is an example model script included with the Poseidon installation.
+We can now launch Posiedon with the following command.
 
 .. code:: bash
     

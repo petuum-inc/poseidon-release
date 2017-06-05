@@ -79,7 +79,7 @@ For security reasons, the script does not allow passwords in ssh. Therefore, no-
 Execution
 ^^^^^^^^^
 
-We can now launch Posiedon with the following command. The script, ``cifar10_train.py`` is an example model script included with the Poseidon installation.
+We can now launch Posiedon with the following command:
 
 .. code:: bash
     

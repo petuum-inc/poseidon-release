@@ -28,7 +28,7 @@ The script is designed to download Cifar10 automatically. To test everything is 
 Data
 ----
 
-By default, the data downloads to ``/tmp/cifar10_data``. Copy this data onto each node you wish to run Poseidon on to skip the download step during execution.
+Once you have tested cifar10_train.py with the above call, the data should have downloaded to ``/tmp/cifar10_data``. Copy this data onto each node you wish to run Poseidon on to skip the download step during Poseidon execution.
 
 Launch Poseidon
 ---------------
