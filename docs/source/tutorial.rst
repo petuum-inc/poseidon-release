@@ -31,7 +31,7 @@ Data
 By default, the data downloads to ``/tmp/cifar10_data``. Copy this data onto each node you wish to run Poseidon on to skip the download step during execution.
 
 Launch Poseidon
-===============
+---------------
 
 The first tutorial covers configurations specific to Amazon Web Service EC2 service. The second describes configurations when running on a local network.
 
