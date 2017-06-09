@@ -23,7 +23,7 @@ For reference later, save the model directory that you just cloned into ``$TF_MO
 
     export TF_MODEL_HOME="`pwd`/models"
 
-The script is designed to download Cifar10 automatically. To test everything is installed correctly (and download the data), we can run cifar10_train.py directly: ``python $TF_MODEL_HOME/tutorial/image/cifar10/cifar10_train.py``
+The script is designed to download Cifar10 automatically. To test everything is installed correctly (and download the data), we can run cifar10_train.py directly: ``python $TF_MODEL_HOME/tutorials/image/cifar10/cifar10_train.py``
 
 Data
 ----
