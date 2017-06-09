@@ -66,7 +66,7 @@ We can now launch Posiedon with the following command:
 
 .. code:: bash
     
-    psd_run -c config.json "python $TF_MODEL_HOME/tutorial/image/cifar10/cifar10_train.py --max_steps 1000"
+    psd_run -c config.json "python $TF_MODEL_HOME/tutorials/image/cifar10/cifar10_train.py --max_steps 1000"
 
 Poseidon Logs
 -------------

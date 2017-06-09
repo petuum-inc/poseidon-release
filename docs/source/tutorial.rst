@@ -48,4 +48,4 @@ Poseidon's evaluating procedure is the same as TensorFlow's. Run the evaluation 
 
 .. code:: bash
 
-    python $TF_MODEL_HOME/tutorial/image/cifar10/cifar10_eval.py
+    python $TF_MODEL_HOME/tutorials/image/cifar10/cifar10_eval.py
