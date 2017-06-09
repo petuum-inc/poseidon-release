@@ -8,8 +8,8 @@ Currently quick installation is only possible with Ubuntu through the debian pac
 
 .. code:: bash
     
-    wget -O poseidon-repo-ubuntu1404_1.0.1_amd64.deb https://github.com/petuum-inc/storage/blob/master/poseidon/deb/ubuntu/poseidon-repo-ubuntu1404_1.0.1_amd64.deb?raw=true
-    sudo dpkg -i poseidon-repo-ubuntu1404_1.0.1_amd64.deb
+    wget -O poseidon-ubuntu1404_1.0.1_amd64.deb https://github.com/petuum-inc/storage/blob/master/poseidon/deb/ubuntu/poseidon-ubuntu1404_1.0.1_amd64.deb?raw=true
+    sudo dpkg -i poseidon-ubuntu1404_1.0.1_amd64.deb
 
 Uninstall
 ---------
