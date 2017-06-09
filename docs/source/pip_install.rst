@@ -1,5 +1,5 @@
 
-Don't forget to install CUDA and cuDNN. Once this is complete, follow these steps.
+Don't forget to install CUDA and cuDNN, more details can be found `here <../cuda_install/>`_. Once this is complete, follow these steps.
 
 Setup
 -----
