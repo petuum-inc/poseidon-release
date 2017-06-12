@@ -6,7 +6,7 @@ Poseidon Tutorial
 
 Poseidon is designed to be able to run on a variety of different clusters. This tutorial contains two cluster examples: AWS and a private cluster.
 
-In this tutorial, we will use `CIFAR-10 <http://www.cs.toronto.edu/~kriz/cifar.html>`_, which is a common benchmark in machine learning for image recognition using convolutional neural networks (CNN). The following url provides a description of TensorFlow's implementation: https://www.tensorflow.org/versions/r0.10/tutorials/deep_cnn/.
+In this tutorial, we will use `CIFAR-10 <http://www.cs.toronto.edu/~kriz/cifar.html>`_, which is a common benchmark in machine learning for image recognition using convolutional neural networks (CNN). The following url provides a description of TensorFlow's implementation: https://www.tensorflow.org/versions/r1.0/tutorials/deep_cnn/.
 
 Download the Model Script
 -------------------------

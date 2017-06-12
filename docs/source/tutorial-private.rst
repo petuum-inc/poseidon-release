@@ -79,14 +79,14 @@ For security reasons, the script does not allow passwords in ssh. Therefore, no-
 Execution
 ^^^^^^^^^
 
-We can now launch Posiedon with the following command:
+We can now launch Poseidon with the following command:
 
 .. code:: bash
     
-    psd_run -c config.json "python $TF_MODEL_HOME/tutorials/models/image/cifar10/cifar10_train.py --max_steps 1000"
+    psd_run -c config.json -o logs "python $TF_MODEL_HOME/tutorials/models/image/cifar10/cifar10_train.py --max_steps 1000"
 
 Poseidon Logs
 -------------
 
-After running Poseidon, you can check the execution log ``poseidon_run.log`` in the same path you ran ``psd_run``. There are also output log files for debugging and monitoring purpose created in ``poseidon_log_$TIMESTAMP_SUFFIX`` folder.
+After running Poseidon, you can check the execution log ``poseidon_run.log`` in the same path you ran ``psd_run``. There are also output log files for debugging and monitoring purposes created in ``poseidon_log_$TIMESTAMP_SUFFIX`` folder which will reside in a ``logs`` folder in your current directory (the -o directive).
 
