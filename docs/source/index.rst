@@ -4,7 +4,7 @@ Welcome to Poseidon
 
 Poseidon is an easy-to-use and efficient system architecture for large-scale deep learning.
 
-This distribution of Poseidon uses the `Tensorflow 1.0.1 client API <https://www.tensorflow.org/versions/r1.0/api_docs/python/>`_.
+This distribution of Poseidon uses the `Tensorflow 1.0.1 client API <https://www.tensorflow.org/versions/r1.0/api_docs/python/>`_. Poseidon can distribute python model scripts designed to run on a single node into a cluster with no changes to the scripts themselves. This allows for rapid prototyping of model scripts. Developers can focus on perfecting their models running on a single node and be reasonably confident that the model will run efficiently scaled to 32 nodes or more.
 
 Introduction
 ------------
