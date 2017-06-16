@@ -12,10 +12,11 @@ Options:
 * -o OUTPUT_FOLDER (--out=OUTPUT_FOLDER): the folder base path where log files will be saved (on each node).
 
 Advanced usage:
+
 * If you want specify different entry commands for different workers, you can generate a commands string splits with ``,``.
   Please make sure the number of commands in the last argument is consistent with the number of workers. For example, if you want to specify two different
   data partitions for the two workers, you can run as:
-  ``psd_run -c conf.json -o output "python model.py --dataset=/home/ubuntu/partition1, python model.py --dataset=/home/ubuntu/partition2"``.
+  ``psd_run -c conf.json -o output "python model.py --dataset=/dat/partition1, python model.py --dataset=/dat/partition2"``.
 
 JSON Cluster Config
 -------------------
