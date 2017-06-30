@@ -1,7 +1,7 @@
 CUDA Installation
 -----------------
 
-TensorFlow uses the Nvidia library CUDA and the machine learning patch cuDNN to run certain computation-heavy operations on GPUs. Thus, in order to launch a Poseidon job you must first install CUDA and cuDNN.
+TensorFlow uses the Nvidia library CUDA and the machine learning patch cuDNN to run certain computation-heavy operations on GPUs. Thus, in order to launch a Poseidon job using your GPU you must first install CUDA and cuDNN.
 
 CUDA
 ^^^^

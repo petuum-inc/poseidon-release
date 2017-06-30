@@ -11,7 +11,9 @@ Supported Operating Systems
 Pre-Install steps
 -----------------
 
-Poseidon runs on GPU clusters. The following steps outline the installation of GPU libraries CUDA and cuDNN:
+There are two Poseidon packages. One is for CPU-only devices, the other runs on GPU devices. 
+
+For GPU devices, you must install the nVidia CUDA libraries. The install instructions for CUDA and cuDNN are outlined below:
 
 .. toctree::
    :maxdepth: 2

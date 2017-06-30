@@ -9,7 +9,9 @@ This distribution of Poseidon uses the `Tensorflow 1.0.1 client API <https://www
 Introduction
 ------------
 
-Poseidon allows deep learning applications written in popular languages and tested on single GPU nodes to easily scale onto a cluster environment with high performance, correctness, and low resource usage. This release runs the TensorFlow 1.0.1 api on distributed GPU clusters - greatly improving convenience, efficiency and scalability over the standard opensource TensorFlow software.
+Poseidon allows deep learning applications written in popular languages and tested on single GPU nodes to easily scale onto a cluster environment with high performance, correctness, and low resource usage. This release has two packages, one for cpu-only machines and the other for machines with gpus.
+
+Traditionally, distributing deep learning jobs has been difficult for two reasons. First of all, taking a model and parallelizing it has been a manual process that had to be done uniquely for every new deep learning model. Secondly, even if the technical challenge of parallelization can be achieved, speed-ups are not guaranteed because dataflow can bottleneck in many ways. Poseidon is built on top of state of the art research aimed at effectively distributing deep learning and it can automatically distribute most deep learning tasks to provide faster total throughput with no manual intervention.
 
 Contents
 --------

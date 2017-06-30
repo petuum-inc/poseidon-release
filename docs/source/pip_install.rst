@@ -1,5 +1,5 @@
 
-Don't forget to install CUDA and cuDNN, more details can be found `here <../cuda_install/>`_. Once this is complete, follow these steps.
+If working with GPU machines, don't forget to install CUDA and cuDNN. More details can be found `here <../cuda_install/>`_. Once this is complete, follow these steps.
 
 Setup
 -----
@@ -55,8 +55,11 @@ Install
 Note: if you are not using virtualenv, you may need to ``sudo`` the following instructions.
 
 .. code:: bash
+    # CPU-only package:
+    pip install https://github.com/petuum-inc/storage/raw/master/poseidon/wheel/linux/cpu/poseidon-1.0.1-cp27-cp27mu-linux_x86_64.whl
 
-    pip install https://github.com/petuum-inc/storage/raw/master/poseidon/wheel/linux/gpu/poseidon-1.0.1-cp27-none-linux_x86_64.whl
+    # GPU-enabled package:
+    pip install https://github.com/petuum-inc/storage/raw/master/poseidon/wheel/linux/gpu/poseidon_gpu-1.0.1-cp27-cp27mu-linux_x86_64.whl
 
 Uninstall
 ---------
@@ -64,6 +67,9 @@ Uninstall
 To uninstall, run the following command:
 
 .. code:: bash
-
+    # CPU-only package:
     pip uninstall poseidon
+
+    # GPU-enabled package:
+    pip uninstall poseidon-gpu
 
