@@ -55,6 +55,7 @@ Install
 Note: if you are not using virtualenv, you may need to ``sudo`` the following instructions.
 
 .. code:: bash
+
     # CPU-only package:
     pip install https://github.com/petuum-inc/storage/raw/master/poseidon/wheel/linux/cpu/poseidon-1.0.1-cp27-cp27mu-linux_x86_64.whl
 
@@ -67,6 +68,7 @@ Uninstall
 To uninstall, run the following command:
 
 .. code:: bash
+
     # CPU-only package:
     pip uninstall poseidon
 
