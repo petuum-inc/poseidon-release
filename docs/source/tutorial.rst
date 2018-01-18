@@ -11,11 +11,12 @@ In this tutorial, we will use `CIFAR-10 <http://www.cs.toronto.edu/~kriz/cifar.h
 Download the Model Script
 -------------------------
 
-The model we will use for Cifar10 is created by the TensorFlow team. Clone the git repository for each node you will use for Poseidon:
+The model we will use for Cifar10 is created by the TensorFlow team. Clone the git repository for each node you will use for Poseidon. Since Poseidon is currently set up for v1.0.1, we must also roll back the model repository (the repository isn't versioned along with TensorFlow).
 
 .. code:: bash
     
     git clone https://github.com/tensorflow/models.git
+    git reset --hard a2b2088c52635b86f4a2ac70391118b9419b3c55
 
 For reference later, save the model directory that you just cloned into ``$TF_MODEL_HOME`` for reference later:
 
